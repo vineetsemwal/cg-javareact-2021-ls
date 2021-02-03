@@ -9,15 +9,12 @@ public class StudentMain {
 	
 	public void start() {
 		Student students[]=new Student[2];
-		Student student1 = new Student();
-		student1.setId(1);
-		student1.setName("abhishek");
-		student1.setScore(70);
-
-		Student student2 = new Student();
-		student2.setId(2);
-		student2.setName("suriya");
-		student2.setScore(50);
+		// initializing object with constructor as soon as it is constructed
+		Student student1 = new Student(1,"abhishek",70);
+		displayStudent(student1);
+		
+		Student student2 = new Student(2,"suriya",50);
+		student1.setName("abhishek nishad");//setting the value later
 		
 		students[0]=student1;
 		students[1]=student2;

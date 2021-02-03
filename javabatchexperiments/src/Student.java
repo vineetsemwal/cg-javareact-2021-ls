@@ -5,6 +5,18 @@ public class Student {
 	String name;
 	int score;
 	
+	Student(){
+		id=-1;
+		name="not inialized";
+		score=-1;
+	}
+	
+	Student(int idArg, String nameArg, int scoreArg){
+		id=idArg;
+	    name=nameArg;
+	    score=scoreArg;
+	}
+	
 	int getId() {
 		return id;
 	}
