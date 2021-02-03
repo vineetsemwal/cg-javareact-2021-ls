@@ -1,3 +1,7 @@
+package student.ui;
+
+import student.beans.Course;
+import student.beans.Student;
 
 public class StudentMain {
 
