@@ -5,14 +5,28 @@ public class Student {
 	String name;
 	int score;
 	
-	public String performance() {
-		String performanceValue;
-		if(score>60) {
-			performanceValue="good";
-		}else {
-			performanceValue="poor";
-		}
-		return performanceValue;
+	int getId() {
+		return id;
 	}
-
+	
+	void setId(int idArg) {
+		id=idArg;
+	}
+	
+	String getName() {
+		return name;
+	}
+	
+	void setName(String nameArg) {
+		name=nameArg;
+	}
+	
+	int getScore() {
+		return score;
+	}
+	
+	void setScore(int scoreArg) {
+		score=scoreArg;
+	}
+	
 }

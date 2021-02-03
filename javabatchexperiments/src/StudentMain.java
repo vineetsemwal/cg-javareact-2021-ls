@@ -10,14 +10,14 @@ public class StudentMain {
 	public void start() {
 		Student students[]=new Student[2];
 		Student student1 = new Student();
-		student1.id = 1;
-		student1.name = "abhishek";
-		student1.score = 70;
+		student1.setId(1);
+		student1.setName("abhishek");
+		student1.setScore(70);
 
 		Student student2 = new Student();
-		student2.id = 2;
-		student2.name = "suriya";
-		student2.score = 50;
+		student2.setId(2);
+		student2.setName("suriya");
+		student2.setScore(50);
 		
 		students[0]=student1;
 		students[1]=student2;
@@ -30,9 +30,10 @@ public class StudentMain {
 	}
 
 	void displayStudent(Student student) {
-		String feedback = student.performance();
-		System.out.println("student " + student.id + " " + student.name + " " + 
-		student.score + " " + feedback);
+		int id=student.getId();
+		String name=student.getName();
+		int score=student.getScore();
+		System.out.println("student " + id + " " + name + " " + score );
 
 	}
 
