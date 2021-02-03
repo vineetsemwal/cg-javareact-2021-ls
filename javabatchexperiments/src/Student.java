@@ -5,16 +5,18 @@ public class Student {
 	String name;
 	int score;
 	
+	Course course;
+	
 	Student(){
-		id=-1;
-		name="not inialized";
-		score=-1;
+		this(-1,"not initialized",-1,null);
 	}
 	
-	Student(int id, String name, int score){
+	
+	Student(int id, String name, int score, Course course){
 		this.id=id;
 	    this.name=name;
 	    this.score=score;
+	    this.course=course;
 	}
 	
 	int getId() {
@@ -39,6 +41,15 @@ public class Student {
 	
 	void setScore(int score) {
 		this.score=score;
+	}
+	
+	
+	Course getCourse() {
+		return course;
+	}
+	
+	void setCourse(Course course) {
+		this.course=course;
 	}
 	
 }
