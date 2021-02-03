@@ -10,6 +10,9 @@ public class StudentMain {
 	public void start() {
 		Student students[]=new Student[2];
 		// initializing object with constructor as soon as it is constructed
+		Student student4=new Student();
+		displayStudent(student4);
+		student4.setId(11);
 		Student student1 = new Student(1,"abhishek",70);
 		displayStudent(student1);
 		

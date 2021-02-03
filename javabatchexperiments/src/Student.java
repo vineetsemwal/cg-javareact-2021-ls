@@ -11,34 +11,34 @@ public class Student {
 		score=-1;
 	}
 	
-	Student(int idArg, String nameArg, int scoreArg){
-		id=idArg;
-	    name=nameArg;
-	    score=scoreArg;
+	Student(int id, String name, int score){
+		this.id=id;
+	    this.name=name;
+	    this.score=score;
 	}
 	
 	int getId() {
 		return id;
 	}
 	
-	void setId(int idArg) {
-		id=idArg;
+	void setId(int id) {
+		this.id=id;
 	}
 	
 	String getName() {
 		return name;
 	}
 	
-	void setName(String nameArg) {
-		name=nameArg;
+	void setName(String name) {
+		this.name=name;
 	}
 	
 	int getScore() {
 		return score;
 	}
 	
-	void setScore(int scoreArg) {
-		score=scoreArg;
+	void setScore(int score) {
+		this.score=score;
 	}
 	
 }
