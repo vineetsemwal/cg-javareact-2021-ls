@@ -15,10 +15,11 @@ public class Student {
 	
 	
 	public Student(int id, String name, int score, Course course){
-		this.id=id;
-	    this.name=name;
-	    this.score=score;
-	    this.course=course;
+		this.setId(id);
+		this.setName(name);
+	    this.setScore(score);
+	    this.setCourse(course);
+	    
 	}
 	
   	public int getId() {
