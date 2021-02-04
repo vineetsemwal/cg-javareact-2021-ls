@@ -22,7 +22,7 @@ public class Student {
 	    
 	}
 	
-  	public int getId() {
+    public int getId() {
 		return id;
 	}
 	

@@ -26,11 +26,11 @@ public class StudentMain {
 			Student iteratedStudent = students[i];
 			boolean isCseStudent = iteratedStudent instanceof CseStudent;
 			if (isCseStudent) {
-				CseStudent cseStudent = (CseStudent) iteratedStudent;
+				CseStudent cseStudent =(CseStudent) iteratedStudent;
 				displayStudent(cseStudent);
 			}
-			boolean isEceStudent = iteratedStudent instanceof EceStudent;
-			if (isEceStudent) {
+			
+			if (iteratedStudent instanceof EceStudent) {
 				EceStudent eceStudent = (EceStudent) iteratedStudent;
 				displayStudent(eceStudent);
 			}
