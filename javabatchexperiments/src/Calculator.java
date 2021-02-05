@@ -6,8 +6,8 @@ public class Calculator {
 		return sum;
 	}	
 	
-	StringExperiment add(StringExperiment str1, StringExperiment str2 ) {
-		StringExperiment sum=str1+str2;
+	String add(String str1, String str2 ) {
+		String sum=str1+str2;
 		return sum;
 	}
 	
