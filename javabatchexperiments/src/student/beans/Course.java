@@ -25,4 +25,10 @@ public class Course {
 	public void setCourseName(String name) {
 		this.courseName=name;
 	}
+
+	@Override
+	public String toString() {
+       String text="courseId:"+courseId+"- courseName:"+courseName;
+       return text;
+	}
 }

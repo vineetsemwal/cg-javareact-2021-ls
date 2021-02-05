@@ -1,10 +1,8 @@
 
-public class Vehicle {
+public abstract class Vehicle  {
 	private int tyres;
 
-	protected void moves() {
-		System.out.println("vehicle moves");
-	}
+	abstract protected void moves();
 
 	public int getTyres() {
 		return tyres;

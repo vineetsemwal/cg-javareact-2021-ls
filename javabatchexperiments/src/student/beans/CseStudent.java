@@ -1,7 +1,6 @@
 package student.beans;
 
 public class CseStudent extends Student{
-
 	private String laptop;
 	private String language;
 	

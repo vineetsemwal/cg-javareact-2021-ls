@@ -13,7 +13,11 @@ public class StudentMain {
 		Student students[] = new Student[2];
 		Course course1 = new Course("c1", "computer science");
 		Course course2 = new Course("c2", "Telecom");
+		System.out.println(course1);
+
 		CseStudent cseStudent1 = new CseStudent(1, "abhishek", 70, course1, "lenovo", "java");
+		System.out.println(cseStudent1.toString());
+
 		displayStudent(cseStudent1);
         cseStudent1.setName("gunaditha");
 		

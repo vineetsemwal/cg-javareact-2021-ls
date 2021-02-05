@@ -2,7 +2,7 @@ package student.beans;
 
 
 
-public class Student {
+public class Student{
 	
 	private int id;
 	private String name;
@@ -45,8 +45,7 @@ public class Student {
 	public void setScore(int score) {
 		this.score=score;
 	}
-	
-	
+
 	public Course getCourse() {
 		return course;
 	}
@@ -54,5 +53,10 @@ public class Student {
 	public void setCourse(Course course) {
 		this.course=course;
 	}
-	
+
+	@Override
+	public String toString() {
+		String text="id:"+id +" name-"+name+"-"+score+" course"+course;
+	    return text;
+	}
 }
