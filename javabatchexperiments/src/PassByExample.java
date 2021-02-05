@@ -2,7 +2,7 @@ import student.beans.*;
 
 public class PassByExample {
 	
-	public static void main(String arguments[]) {
+	public static void main(StringExperiment arguments[]) {
 		Course course=new Course("c1","java");
 		Student original=new Student(1,"tanisha",70,course);
 		PassByExample example=new PassByExample();

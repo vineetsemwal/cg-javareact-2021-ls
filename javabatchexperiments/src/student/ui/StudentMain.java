@@ -15,7 +15,8 @@ public class StudentMain {
 		Course course2 = new Course("c2", "Telecom");
 		CseStudent cseStudent1 = new CseStudent(1, "abhishek", 70, course1, "lenovo", "java");
 		displayStudent(cseStudent1);
-
+        cseStudent1.setName("gunaditha");
+		
 		EceStudent eceStudent1 = new EceStudent(2, "suriya", 50, course2, "multimeter");
 		cseStudent1.setName("abhishek nishad");// setting the value later
 
