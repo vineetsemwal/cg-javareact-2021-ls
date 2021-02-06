@@ -19,9 +19,10 @@ public class MultiDArray1 {
 
     void display(int array[][]){
         for(int row=0; row<3; row++){
+            System.out.println();
             for (int column=0;column<2;column++){
                int element= array[row][column];
-            System.out.println("row="+row+" column="+column +" element="+element);
+            System.out.print(element+"  ");
             }
         }
     }

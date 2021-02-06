@@ -11,7 +11,7 @@ public class MultiDArray2 {
             System.out.println();
             int columnArray[]=array2D[row];
             for(int col=0;col<columnArray.length;col++){
-                System.out.print(columnArray[col]+" , ");
+                System.out.print(columnArray[col]+"  ");
             }
         }
     }
