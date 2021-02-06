@@ -8,8 +8,7 @@ public class NishaIntegerWrapper {
 	}
 	
 	public byte byteValue() {
-		byte b=(byte)val;
-		return b;
+		return (byte)val;
 	}
 
 }

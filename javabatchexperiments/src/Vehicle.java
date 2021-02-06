@@ -2,7 +2,7 @@
 public abstract class Vehicle  {
 	private int tyres;
 
-	abstract protected void moves();
+	protected abstract void moves();
 
 	public int getTyres() {
 		return tyres;
