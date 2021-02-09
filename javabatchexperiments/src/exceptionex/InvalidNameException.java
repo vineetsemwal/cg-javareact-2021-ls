@@ -1,6 +1,6 @@
 package exceptionex;
 
-public class InvalidNameException extends Throwable{
+public class InvalidNameException extends RuntimeException{
 
     public InvalidNameException(){
     }

@@ -59,4 +59,5 @@ public class Student{
 		String text="id:"+id +" name-"+name+"-"+score+" course"+course;
 	    return text;
 	}
+
 }
