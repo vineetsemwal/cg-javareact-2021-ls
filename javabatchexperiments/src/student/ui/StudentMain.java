@@ -13,16 +13,18 @@ public class StudentMain {
         project.start();
     }
 
-    public Student findStudentById(int id) {
+    public Student findStudentById(int id) throws InvalidIdException, StudentNotFoundException{
         if (id < 0) {
             throw new InvalidIdException("id is invalid " + id);
         }
-        for (int i = 0; i < students.length; i++) {
-            Student student = students[i];
+
+        //for each loop
+        for (Student student:students){
             if (student.getId() == id) {
                 return student;
             }
         }
+
         throw new StudentNotFoundException("student not found for id=" + id);
     }
 
