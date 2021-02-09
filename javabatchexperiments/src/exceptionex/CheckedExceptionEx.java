@@ -4,16 +4,20 @@ public class CheckedExceptionEx {
     public static void main(String args[]) {
         CheckedExceptionEx example = new CheckedExceptionEx();
         int ageInput = 27;
-        String nameInput = "";
+        String nameInput = "arpit";
         try {
             example.use(ageInput, nameInput);
+            //file handle 1
+            //work
+
+
         } catch (InvalidAgeException e) {
             System.out.println("sorry can't display information to you as age is invalid");
             String exceptionMsg = e.getMessage();
             System.out.println(exceptionMsg);
             e.printStackTrace();
         } catch (InvalidNameException e) {
-            System.out.println("sorry can't display information to you as name is invalid");
+             System.out.println("sorry can't display information to you as name is invalid");
             String exceptionMsg = e.getMessage();
             System.out.println(exceptionMsg);
             e.printStackTrace();
@@ -21,6 +25,11 @@ public class CheckedExceptionEx {
             System.out.println("something went wrong");
             e.printStackTrace();
         }
+        finally{
+            System.out.println("after use");
+        //close handle
+        }
+
     }
 
     public void use(int age, String name) throws InvalidAgeException, InvalidNameException {
