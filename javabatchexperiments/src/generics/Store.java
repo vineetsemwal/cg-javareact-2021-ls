@@ -1,18 +1,18 @@
 package generics;
 
 public class Store<T> {
-    private T value;
+   private T value;
 
-    public Store(T element) {
-        this.value = element;
-    }
+   public Store(T element){
+       this.value =element;
+   }
 
-    public void setValue(T value) {
-        this.value = value;
-    }
+   public void setValue(T value){
+       this.value=value;
+   }
 
-    public T getValue() {
-        return value;
-    }
+   public T getValue() {
+       return value;
+   }
 
 }
