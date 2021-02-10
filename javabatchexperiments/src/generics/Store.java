@@ -1,10 +1,13 @@
 package generics;
 
 public class Store<T> {
+    private  String name;
+
    private T value;
 
-   public Store(T element){
+   public Store(String name,T element){
        this.value =element;
+       this.name = name;
    }
 
    public void setValue(T value){
@@ -15,4 +18,11 @@ public class Store<T> {
        return value;
    }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
