@@ -27,6 +27,11 @@ public class Product {
     }
 
     @Override
+    public int hashCode() {
+        return  id;
+    }
+
+    @Override
     public boolean equals(Object arg){
         if(this==arg){
             return true;

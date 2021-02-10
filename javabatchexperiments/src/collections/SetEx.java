@@ -4,35 +4,35 @@ import exceptionex.Product;
 
 import java.util.*;
 
-public class ListEx {
+public class SetEx {
+
     public static void main(String args[]) {
-        ListEx app = new ListEx();
-        app.start();
+         SetEx app=new SetEx();
+         app.start();
     }
 
     public void start() {
-        List<Product> list = new LinkedList<>();
+        Set<Product> set = new HashSet<>();
         Product product1 = new Product(1, "samsung galaxy");
-        list.add(product1);
+        set.add(product1);
         Product product2 = new Product(2, "redmi");
-        list.add(product2);
+        set.add(product2);
         Product product3 = new Product(3, "iphone");
-        list.add(product3);
+        set.add(product3);
         Product product4 = new Product(4, "omen");
-        list.add(product4);//adding element at the end
-        list.add(0,product4);// adding element at zero index
-        int size = list.size();
+        set.add(product4);//adding element at the end
+        set.add(product4);
+        int size = set.size();
         System.out.println("size at start=" + size);
-        Product element = list.get(1);
-        display(element);
-        boolean exists = list.contains(product3);
+
+        boolean exists = set.contains(product3);
         System.out.println("product3 exists=" + exists);
-        list.remove(product3);//
-        list.remove(3);
-        exists = list.contains(product3);
+        set.remove(product3);//
+        set.remove(3);
+        exists = set.contains(product3);
         System.out.println("product3  exists after removal=" + exists);
 
-        for (Product iteratedElement : list) {
+        for (Product iteratedElement : set) {
             display(iteratedElement);
         }
 
