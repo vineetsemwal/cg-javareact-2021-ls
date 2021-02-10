@@ -35,6 +35,7 @@ public class Customer {
        if(arg==null || !(arg instanceof Customer)){
            return false;
        }
+
        Customer that=(Customer) arg;
        return this.id.equals(that.id);
     }

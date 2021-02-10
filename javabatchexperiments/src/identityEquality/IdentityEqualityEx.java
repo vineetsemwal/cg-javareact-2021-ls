@@ -10,5 +10,6 @@ public class IdentityEqualityEx {
       System.out.println(isSame);
       boolean isEqual=customer1.equals(customer2);
       System.out.println("equal="+isEqual);
+
     }
 }

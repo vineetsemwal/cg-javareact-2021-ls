@@ -30,26 +30,28 @@ public class CheckedExceptionEx {
 
     }
 
-    public void use(int age, String name)  {
+    public void use(int age, String name) {
+
         isDrivingPermissible(age, name);
 
     }
 
     public void isDrivingPermissible(int age, String name){
-        if (age < 0 || age > 120) {
-            InvalidAgeException ageException = new InvalidAgeException("age can't be " + age);
-            throw ageException;
-        }
+            if (age < 0 || age > 120) {
+                InvalidAgeException ageException = new InvalidAgeException("age can't be " + age);
+                throw ageException;
+            }
 
-        if (name == null || name.isEmpty()) {
-            throw new InvalidNameException("name can't be null or empty");
-        }
+            if (name == null || name.isEmpty()) {
+                throw new InvalidNameException("name can't be null or empty");
+            }
 
-        if (age >= 18) {
-            System.out.println(name + ", you can drive");
-        } else {
-            System.out.println(name + ", you can't drive");
-        }
+            if (age >= 18) {
+                System.out.println(name + ", you can drive");
+            } else {
+                System.out.println(name + ", you can't drive");
+            }
+
     }
 
 
