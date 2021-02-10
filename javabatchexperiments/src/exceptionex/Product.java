@@ -25,4 +25,17 @@ public class Product {
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public boolean equals(Object arg){
+        if(this==arg){
+            return true;
+        }
+        if(arg==null || !(arg instanceof Product)){
+            return false;
+        }
+        Product that = (Product)arg;
+        return this.id == that.id;
+    }
+
 }
