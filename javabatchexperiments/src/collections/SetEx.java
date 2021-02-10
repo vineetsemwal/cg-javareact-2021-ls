@@ -12,11 +12,12 @@ public class SetEx {
     }
 
     public void start() {
-        Set<Product> set = new HashSet<>();
-        Product product1 = new Product(1, "samsung galaxy");
-        set.add(product1);
+        Set<Product> set = new LinkedHashSet<>();
         Product product2 = new Product(2, "redmi");
         set.add(product2);
+        Product product1 = new Product(1, "samsung galaxy");
+        set.add(product1);
+
         Product product3 = new Product(3, "iphone");
         set.add(product3);
         Product product4 = new Product(4, "omen");

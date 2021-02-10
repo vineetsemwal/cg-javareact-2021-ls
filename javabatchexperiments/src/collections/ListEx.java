@@ -32,8 +32,10 @@ public class ListEx {
         list.remove(3);
         exists = list.contains(product3);
         System.out.println("product3  exists after removal=" + exists);
-        Comparator<Product>comparator=new ProductNameComparator();
-        list.sort(comparator);
+     //   Comparator<Product>comparator=new ProductNameComparator();
+       // list.sort(comparator);
+        Collections.sort(list);
+
         for (Product iteratedElement : list) {
             display(iteratedElement);
         }
