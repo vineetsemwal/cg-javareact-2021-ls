@@ -26,7 +26,8 @@ public class MapEx {
         Product fetchedProduct = map.get(2);
         System.out.println("displaying product with key 2");
         display(fetchedProduct);
-        Set<Integer> keys = map.keySet();
+        Collection<Integer> keys = map.keySet();
+        System.out.println("keyset="+keys);
         System.out.println("iterating on the keys and fetching values");
         for(Integer key:keys){
            Product product= map.get(key);
@@ -36,6 +37,14 @@ public class MapEx {
        Collection<Product>values= map.values();
        for(Product product:values){
           display(product);
+       }
+       System.out.println("iterating on entries");
+       Set<Map.Entry<Integer, Product>>entries=map.entrySet();
+       for (Map.Entry<Integer,Product> entry:entries){
+           Integer key=entry.getKey();
+           Product value=entry.getValue();
+           System.out.println("key is "+key);
+           display(value);
        }
 
     }

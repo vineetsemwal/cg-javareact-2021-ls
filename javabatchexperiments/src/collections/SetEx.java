@@ -12,7 +12,8 @@ public class SetEx {
     }
 
     public void start() {
-        Set<Product> set = new TreeSet<>(new ProductIdComparator());
+        TreeSet<Product> set = new TreeSet<>(new ProductIdComparator());
+        set.add(null);
         Product product2 = new Product(2, "redmi");
         set.add(product2);
         Product product1 = new Product(1, "samsung galaxy");
