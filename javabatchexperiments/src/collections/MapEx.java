@@ -26,7 +26,7 @@ public class MapEx {
         Product fetchedProduct = map.get(2);
         System.out.println("displaying product with key 2");
         display(fetchedProduct);
-        Collection<Integer> keys = map.keySet();
+        Set<Integer> keys = map.keySet();
         System.out.println("keyset="+keys);
         System.out.println("iterating on the keys and fetching values");
         for(Integer key:keys){
