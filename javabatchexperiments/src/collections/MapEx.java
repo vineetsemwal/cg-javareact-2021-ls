@@ -12,14 +12,14 @@ public class MapEx {
     }
 
     public void start() {
-        Map<Integer, Product> map = new HashMap<>();
-        Product product1 = new Product(1, "samsung");
+        Comparator<Integer>keyComparator=new IdKeyComparator();
+        Map<Integer, Product> map = new TreeMap<>(keyComparator);
         Product product2 = new Product(2, "redmi");
+        Product product1 = new Product(1, "samsung");
         Product product3 = new Product(3, "lenovo");
         map.put(1, product1);
         map.put(2, product2);
         map.put(3, product3);
-        map.put(4, product2);
         boolean keyExists = map.containsKey(2);
         System.out.println("key 2 exists ?"+keyExists);
         boolean valueExist = map.containsValue(product1);
