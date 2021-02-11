@@ -8,7 +8,7 @@ import java.util.*;
 
 public class StudentMain {
 
-    private Map<Integer,Student> store = new HashMap<>();
+    private Map<Integer, Student> store = new HashMap<>();
 
     public static void main(String args[]) {
         StudentMain project = new StudentMain();
@@ -16,30 +16,31 @@ public class StudentMain {
     }
 
 
-
     public void start() {
         try {
             Course course1 = new Course("c1", "computer science");
             Course course2 = new Course("c2", "Telecom");
             System.out.println(course1);
-            addCseStudent(1,"arpit",80,course1,"omen","java");
-            addCseStudent(2,"abeer",70,course2,"lenovo","C#");
+            addCseStudent(1, "arpit", 80, course1, "omen", "java");
+            addCseStudent(2, "abeer", 70, course2, "lenovo", "C#");
 
             addEceStudent(3, "suriya", 50, course2, "multimeter");
-            addEceStudent(4,"abhishek",90,course2,"electric tester");
+            addEceStudent(4, "abhishek", 90, course2, "electric tester");
 
             int inputId = 1;
             Student student = findStudentById(inputId);
             System.out.println("student for id=" + inputId);
 
-            if(student instanceof EceStudent){
-                EceStudent eceStudent=(EceStudent)student;
+            if (student instanceof EceStudent) {
+                EceStudent eceStudent = (EceStudent) student;
                 displayStudent(eceStudent);
             }
-            if(student instanceof CseStudent){
-                CseStudent cseStudent=(CseStudent)student;
+            if (student instanceof CseStudent) {
+                CseStudent cseStudent = (CseStudent) student;
                 displayStudent(cseStudent);
             }
+
+            removeStudentById(-20);
 
             displayAll();
 
@@ -56,45 +57,53 @@ public class StudentMain {
         }
     }
 
-    public void displayAll(){
+    public void displayAll() {
         System.out.println("*****display all student*******");
-        Collection<Student>students=store.values();
-        for(Student student:students){
-            if(student instanceof EceStudent){
-                EceStudent eceStudent=(EceStudent)student;
+        Collection<Student> students = store.values();
+        for (Student student : students) {
+            if (student instanceof EceStudent) {
+                EceStudent eceStudent = (EceStudent) student;
                 displayStudent(eceStudent);
             }
-            if(student instanceof CseStudent){
-                CseStudent cseStudent=(CseStudent)student;
+            if (student instanceof CseStudent) {
+                CseStudent cseStudent = (CseStudent) student;
                 displayStudent(cseStudent);
             }
         }
     }
 
 
-    public void addEceStudent(int id, String name, int score,Course course, String device)
-    {
+    public void addEceStudent(int id, String name, int score, Course course, String device) {
         EceStudent student = new EceStudent(id, name, score, course, device);
-        store.put(id,student);
+        store.put(id, student);
     }
 
 
-    public void addCseStudent(int id, String name, int score,Course course, String laptop, String lang)
-    {
-        CseStudent student = new CseStudent(id, name, score,course, laptop, lang);
-        store.put(id,student);
+    public void addCseStudent(int id, String name, int score, Course course, String laptop, String lang) {
+        CseStudent student = new CseStudent(id, name, score, course, laptop, lang);
+        store.put(id, student);
 
     }
 
-    public Student findStudentById(int id) throws InvalidIdException, StudentNotFoundException{
+    public void validateId(int id) {
         if (id < 0) {
             throw new InvalidIdException("id is invalid " + id);
         }
-        if(!store.containsKey(id)){
+
+    }
+
+    public Student findStudentById(int id) throws InvalidIdException, StudentNotFoundException {
+        validateId(id);
+        if (!store.containsKey(id)) {
             throw new StudentNotFoundException("student not found for id=" + id);
         }
-        Student student=store.get(id);
+        Student student = store.get(id);
         return student;
+    }
+
+    public void removeStudentById(int id) {
+        validateId(id);
+        store.remove(id);
     }
 
     void displayBaseStudent(Student student) {
