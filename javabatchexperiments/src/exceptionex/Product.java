@@ -47,4 +47,5 @@ public class Product implements Comparable<Product>{
     public int compareTo(Product that) {
         return this.id-that.id;
     }
+
 }

@@ -12,7 +12,7 @@ public class SetEx {
     }
 
     public void start() {
-        Set<Product> set = new LinkedHashSet<>();
+        Set<Product> set = new TreeSet<>(new ProductIdComparator());
         Product product2 = new Product(2, "redmi");
         set.add(product2);
         Product product1 = new Product(1, "samsung galaxy");
@@ -29,7 +29,6 @@ public class SetEx {
         boolean exists = set.contains(product3);
         System.out.println("product3 exists=" + exists);
         set.remove(product3);//
-        set.remove(3);
         exists = set.contains(product3);
         System.out.println("product3  exists after removal=" + exists);
 
