@@ -9,8 +9,13 @@ public class BeautifulTask implements Runnable {
 
     @Override
     public void run() {
-        for(int i=0;i<3;i++) {
-            greeting.greet();
+        try {
+            for (int i = 0; i < 3; i++) {
+                greeting.greet();
+                Thread.sleep(1000);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 }
