@@ -9,6 +9,6 @@ public class MultiThreadExample {
         thread1.start();
         thread2.start();
         thread3.start();
-        System.out.println("main thread");
+        System.out.println("main thread finished");
     }
 }
