@@ -19,7 +19,7 @@ public class FileCopyUsingCharStreamEx {
         try {
             reader = new FileReader(inputFile);
             writer=new FileWriter(outFile);
-            int charRead=-1;
+            int charRead;
             int charsCount=0;
             int vowelsCount=0;
             while ((charRead=reader.read())!=-1){
@@ -45,6 +45,9 @@ public class FileCopyUsingCharStreamEx {
             close(writer);
         }
     }
+    boolean isVowel(char character){
+        return(character=='a' || character=='e' || character=='i' || character=='o' || character=='u');
+    }
 
     void close(Writer writer){
         try{
@@ -54,9 +57,6 @@ public class FileCopyUsingCharStreamEx {
         }
     }
 
-    boolean isVowel(char character){
-        return(character=='a' || character=='e' || character=='i' || character=='o' || character=='u');
-    }
 
     void close(Reader reader){
         try{
