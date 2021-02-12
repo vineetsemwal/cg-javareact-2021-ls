@@ -9,8 +9,9 @@ public class ScannerExample {
         System.out.println( "provide name");
         String name=scanner.next();
         System.out.println("provide age");
-        int age=scanner.nextInt();
+        int  age=scanner.nextInt();
         System.out.println("name is "+name+" age is "+age);
         scanner.close();
+
     }
 }
