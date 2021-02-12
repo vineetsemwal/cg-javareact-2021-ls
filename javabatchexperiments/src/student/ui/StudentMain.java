@@ -31,11 +31,11 @@ public class StudentMain {
             Student student = findStudentById(inputId);
             System.out.println("student for id=" + inputId);
 
-            if (student instanceof EceStudent) {
+            if (isEceStudent(student)) {
                 EceStudent eceStudent = (EceStudent) student;
                 displayStudent(eceStudent);
             }
-            if (student instanceof CseStudent) {
+            if (isCseStudent(student)) {
                 CseStudent cseStudent = (CseStudent) student;
                 displayStudent(cseStudent);
             }
@@ -55,6 +55,20 @@ public class StudentMain {
         } catch (Exception e) {
             System.out.println("something went wrong");
         }
+    }
+
+    public boolean isCseStudent(Student student) {
+        return student instanceof CseStudent;
+        /*
+        if(student instanceof CseStudent) {
+            return true;
+        }
+        return false;
+        */
+    }
+
+    public boolean isEceStudent(Student student){
+        return student instanceof EceStudent;
     }
 
     public void displayAll() {
