@@ -41,13 +41,10 @@ public class FileCopyFastUsingCharStreamEx {
         finally{
             close(reader);
             close(writer);
-            close(bufferedReader);
-            close(bufferedWriter);
+
         }
     }
-    boolean isVowel(char character){
-        return(character=='a' || character=='e' || character=='i' || character=='o' || character=='u');
-    }
+
 
     void close(Writer writer){
         try{
