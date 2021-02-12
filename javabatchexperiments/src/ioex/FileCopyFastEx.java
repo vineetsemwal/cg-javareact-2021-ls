@@ -2,9 +2,10 @@ package ioex;
 
 import java.io.*;
 
-public class FileCopyEx {
-    public static void main(String[] args) {
-        FileCopyEx app = new FileCopyEx();
+public class FileCopyFastEx {
+
+    public static void main(String[] args){
+        FileCopyFastEx app=new FileCopyFastEx();
         app.start();
     }
 
@@ -17,11 +18,13 @@ public class FileCopyEx {
 
             inputStream = new FileInputStream(inputFile);
             outputStream = new FileOutputStream(outFile);
-            int redByte;
+            //int redByte;
             int bytesCount=0;
-            while ((redByte = inputStream.read()) !=-1) {
-                outputStream.write(redByte);
-                bytesCount++;
+            byte redBytes[]=new byte[1000];
+            int newBytesRed;
+            while ((newBytesRed = inputStream.read(redBytes))>0 ) {
+                outputStream.write(redBytes,0,newBytesRed);
+                bytesCount=bytesCount+newBytesRed;
             }
             System.out.println("bytes written="+bytesCount);
 
