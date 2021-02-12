@@ -10,16 +10,16 @@ public class FileApiEx {
     }
 
     void start() {
-        File originalFile = new File("/home/vineet/work/fileapi");
-        boolean isDir=originalFile.isDirectory();
-        boolean exists=originalFile.exists();
-        String name=originalFile.getName();
-        String path=originalFile.getAbsolutePath();
+        File dir = new File("/home/vineet/work/fileapi");
+        boolean isDir=dir.isDirectory();
+        boolean exists=dir.exists();
+        String name=dir.getName();
+        String path=dir.getAbsolutePath();
         System.out.println("is dir="+isDir);
         System.out.println("exists="+exists);
         System.out.println("name="+name);
         System.out.println("path="+path);
-        File files[]=originalFile.listFiles();
+        File files[]=dir.listFiles();
         for(File file : files){
             System.out.println("child file name found="+file.getName());
         }
