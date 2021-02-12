@@ -41,6 +41,8 @@ public class FileCopyFastUsingCharStreamEx {
         finally{
             close(reader);
             close(writer);
+            close(bufferedReader);
+            close(bufferedWriter);
         }
     }
     boolean isVowel(char character){
