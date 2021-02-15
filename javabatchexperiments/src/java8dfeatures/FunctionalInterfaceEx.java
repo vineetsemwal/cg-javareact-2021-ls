@@ -52,5 +52,27 @@ public class FunctionalInterfaceEx {
         Function<Integer,Integer>squareInline2=(number)->number*number;
         int squareResult2=squareInline2.apply(8);
         System.out.println("square result ="+squareResult2);
+
+        IStringMultiplier biFunction=(str,times)->{
+           String result="";
+            for (int i=0;i<times;i++){
+                result=result+str;
+            }
+            return result;
+        };
+
+       String biResult= biFunction.multiply("rohit",3);
+       System.out.println("bifunction Result="+biResult);
+
+       BiFunction<String,Integer,String>biFucntion2=(str,times)->{
+           String result="";
+           for (int i=0;i<times;i++){
+               result=result+str;
+           }
+           return result;
+       };
+       String biResult2=biFucntion2.apply("vijay",4);
+       System.out.println("bifunction Result="+biResult2);
+
     }
 }
