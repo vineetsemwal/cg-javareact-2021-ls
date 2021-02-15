@@ -1,5 +1,7 @@
 package java8dfeatures;
 
+import  java.util.function.*;
+
 public class FunctionalInterfaceEx {
     public static void main(String[]  args){
         IGreet anonymous=new IGreet(){
@@ -19,6 +21,9 @@ public class FunctionalInterfaceEx {
         };
         lambdaBlock.greet("lambda block");
 
+        Consumer<String>lambdaInline2=(msg)->System.out.println(msg);
+        lambdaInline2.accept("hello lambda inline");
+
         IGreetWithName biconsumerInline=(name, msg) ->System.out.println("greeting for "+name +" is "+ msg);
         IGreetWithName biconsumerBlock=(name,msg)->{
             System.out.println("greeting for "+name +" is "+ msg);
@@ -26,6 +31,8 @@ public class FunctionalInterfaceEx {
         biconsumerInline.greet("arpit", "hello");
         biconsumerBlock.greet("abeer", "hi");
 
+        BiConsumer<String,String>biconsumerInline2=(name,msg)->System.out.println("greeting for "+name +" is "+ msg);
+        biconsumerInline2.accept("surya","hello");
 
         IGreetSupplier supplierInline=()->"hello";
         String msg1=supplierInline.greet();
@@ -35,6 +42,8 @@ public class FunctionalInterfaceEx {
         };
         String msg2=supplierBlock.greet();
         System.out.println("msg is "+msg2);
-
+        Supplier<String>supplierInline2=()->"hi";
+        String msg3=supplierInline2.get();
+        System.out.println("msg is "+msg3);
     }
 }
