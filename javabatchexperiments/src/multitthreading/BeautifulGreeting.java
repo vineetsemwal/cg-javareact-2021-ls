@@ -8,7 +8,7 @@ public class BeautifulGreeting {
         this.greeting = greet;
     }
 
-    synchronized public void greet() {
+      synchronized public void greet() {
         try {
             System.out.print("(");
             System.out.print(greeting);

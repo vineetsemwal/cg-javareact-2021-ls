@@ -3,6 +3,7 @@ import java.io.InputStream;
 import java.util.*;
 
 public class ScannerExample {
+
     public static void main(String args[]){
         InputStream inputStream=System.in;
         Scanner scanner = new Scanner(inputStream);
