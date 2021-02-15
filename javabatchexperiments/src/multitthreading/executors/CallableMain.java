@@ -13,8 +13,15 @@ public class CallableMain {
         ExecutorService executor= Executors.newCachedThreadPool();
         Future<Integer>future1 =executor.submit(task1);
         Future<Integer>future2=executor.submit(task2);
+        boolean isResultAvaiable1=future1.isDone();
+        boolean isResultAvailable2=future2.isDone();
+        System.out.println("result 1 available="+isResultAvaiable1+" result 2 availble="+isResultAvailable2);
         Integer result1=future1.get();//blocking method
         Integer result2=future2.get();
+        isResultAvaiable1=future1.isDone();
+        isResultAvailable2=future2.isDone();
+        System.out.println("result 1 available="+isResultAvaiable1+" result 2 availble="+isResultAvailable2);
+
         System.out.println("result1 ="+result1 +" result2 ="+result2);
         executor.shutdown();
     }
