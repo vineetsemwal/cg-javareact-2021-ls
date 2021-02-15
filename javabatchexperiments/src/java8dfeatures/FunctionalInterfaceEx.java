@@ -45,5 +45,12 @@ public class FunctionalInterfaceEx {
         Supplier<String>supplierInline2=()->"hi";
         String msg3=supplierInline2.get();
         System.out.println("msg is "+msg3);
+
+        ISquare squareInline=(number)->number*number;
+        int squareResult=squareInline.square(10);
+        System.out.println("square result="+squareResult);
+        Function<Integer,Integer>squareInline2=(number)->number*number;
+        int squareResult2=squareInline2.apply(8);
+        System.out.println("square result ="+squareResult2);
     }
 }
