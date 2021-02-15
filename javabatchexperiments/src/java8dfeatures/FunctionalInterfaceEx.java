@@ -25,5 +25,16 @@ public class FunctionalInterfaceEx {
         };
         biconsumerInline.greet("arpit", "hello");
         biconsumerBlock.greet("abeer", "hi");
+
+
+        IGreetSupplier supplierInline=()->"hello";
+        String msg1=supplierInline.greet();
+        System.out.println("msg is "+msg1);
+        IGreetSupplier supplierBlock=()->{
+          return "hi";
+        };
+        String msg2=supplierBlock.greet();
+        System.out.println("msg is "+msg2);
+
     }
 }
