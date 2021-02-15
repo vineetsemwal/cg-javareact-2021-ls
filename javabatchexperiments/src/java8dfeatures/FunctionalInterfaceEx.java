@@ -74,5 +74,11 @@ public class FunctionalInterfaceEx {
        String biResult2=biFucntion2.apply("vijay",4);
        System.out.println("bifunction Result="+biResult2);
 
+      Predicate<Integer>predicate=(num)->num%2==0;
+      boolean isEven=predicate.test(10);
+      System.out.println("is even="+isEven);
+      BiPredicate<Integer,Integer>biPredicate=(num1,num2)->(num1+num2)%2==0;
+      boolean isSumEven=biPredicate.test(5,7);
+      System.out.println("is sum even="+isSumEven);
     }
 }
