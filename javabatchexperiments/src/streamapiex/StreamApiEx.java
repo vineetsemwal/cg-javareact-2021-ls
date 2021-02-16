@@ -47,12 +47,6 @@ public class StreamApiEx {
         Consumer<Integer>consumer=System.out::println;
         lengthsStream.forEach(consumer);
 
-
-
-
-
-
-
         cities.stream().
                filter(city->city.length()%2==0)
                .map(city->city.length()).
