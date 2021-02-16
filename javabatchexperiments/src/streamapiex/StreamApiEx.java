@@ -10,8 +10,10 @@ import java.util.stream.Stream;
 
 public class StreamApiEx {
     //
-    //from cities , get a list containing count of cities with even length
-    //
+    //from colelction of cities Collection<String>
+    // collection of cities with even length Collection<String>
+    // collection of length of even length cities Collection<Integer>
+    //display all the length of even length cities
     public static void main(String[]  args){
         List<String> cities=new ArrayList<>();
         cities.add("mumbai");
@@ -36,23 +38,25 @@ public class StreamApiEx {
             System.out.println(length);
         }
 */
-/*
+
         Stream<String> citiesStream=cities.stream();
-        Predicate<String>predicate=(city)->  city.length() % 2 == 0;
+        Predicate<String>predicate=(city)->   city.length() % 2 == 0;
         Stream<String>evenCitiesStream=citiesStream.filter(predicate);
         Function<String,Integer>lengthFunction= (city)->city.length() ;
         Stream<Integer>lengthsStream=evenCitiesStream.map(lengthFunction);
-        Consumer<Integer>consumer=(count)->System.out.println(count);
+        Consumer<Integer>consumer=System.out::println;
         lengthsStream.forEach(consumer);
-*/
+
+
+
+
 
 
 
         cities.stream().
                filter(city->city.length()%2==0)
                .map(city->city.length()).
-                forEach(length->System.out.println(length));
-
+                forEach(System.out::println);
 
 
     }
