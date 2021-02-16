@@ -67,7 +67,7 @@ public class StudentMain {
         */
     }
 
-    public boolean isEceStudent(Student student){
+    public boolean isEceStudent(Student student) {
         return student instanceof EceStudent;
     }
 

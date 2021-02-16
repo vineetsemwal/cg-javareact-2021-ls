@@ -1,4 +1,4 @@
-package java8dfeatures;
+package java8features;
 
 @FunctionalInterface
 public interface IGreetWithName {

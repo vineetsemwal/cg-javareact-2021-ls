@@ -1,4 +1,4 @@
-package java8dfeatures;
+package java8features;
 
 import  java.util.function.*;
 
@@ -43,7 +43,7 @@ public class FunctionalInterfaceEx {
         String msg2=supplierBlock.greet();
         System.out.println("msg is "+msg2);
         Supplier<String>supplierInline2=()->"hi";
-        String msg3=supplierInline2.get();
+         String msg3=supplierInline2.get();
         System.out.println("msg is "+msg3);
 
         ISquare squareInline=(number)->number*number;
@@ -74,11 +74,20 @@ public class FunctionalInterfaceEx {
        String biResult2=biFucntion2.apply("vijay",4);
        System.out.println("bifunction Result="+biResult2);
 
+       IEven even=(num)->num%2==0;
+      boolean isEven1= even.isEven(10);
       Predicate<Integer>predicate=(num)->num%2==0;
-      boolean isEven=predicate.test(10);
-      System.out.println("is even="+isEven);
+      boolean isEven2=predicate.test(10);
+      System.out.println("is even="+isEven2);
       BiPredicate<Integer,Integer>biPredicate=(num1,num2)->(num1+num2)%2==0;
       boolean isSumEven=biPredicate.test(5,7);
       System.out.println("is sum even="+isSumEven);
+
+      UnaryOperator<Integer>unaryOperator=(number)->number*number;
+      int operatorResult=unaryOperator.apply(10);
+      BinaryOperator<Integer>binaryOperator=(num1,num2)->num1+num2;
+      int binaryOperatorResult=binaryOperator.apply(2,5);
+      System.out.println("unary operator result="+operatorResult);
+      System.out.println("binary operator result="+binaryOperatorResult);
     }
 }

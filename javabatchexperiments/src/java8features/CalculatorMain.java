@@ -1,4 +1,4 @@
-package java8dfeatures;
+package java8features;
 
 public class CalculatorMain {
 
