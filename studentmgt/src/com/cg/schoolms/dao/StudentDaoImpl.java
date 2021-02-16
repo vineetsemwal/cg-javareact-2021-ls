@@ -6,11 +6,17 @@ import com.cg.schoolms.entities.Student;
 
 public class StudentDaoImpl implements IStudentDao {
 
+	private int generatedId=0;
+
+	public int generateId() {
+	    generatedId++;
+	    return generatedId;
+	}
 	
 	@Override
 	public void add(Student student) {
 		Map<Integer,Student>store=StoreHolder.store;
-		int id=StoreHolder.generateId();
+		int id=generateId();
 		student.setId(id);
 		store.put(id, student);
 	}
