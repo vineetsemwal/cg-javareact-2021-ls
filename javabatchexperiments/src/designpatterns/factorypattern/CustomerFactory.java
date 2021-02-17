@@ -20,7 +20,7 @@ public class CustomerFactory {
     private Map<Integer, Customer> customersMap = new HashMap<>();
 
     public Customer newCustomer(int id, String name) {
-        Customer customer = factory.newCustomer(id,name);//new Customer()
+        Customer customer = new Customer();
         customer.setId(id);
         customer.setName(name);
         customersMap.put(id, customer);
