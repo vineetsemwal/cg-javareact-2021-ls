@@ -7,9 +7,9 @@ import com.cg.schoolms.entities.Student;
 public class StudentDaoImpl implements IStudentDao {
 
 	private int generatedId=0;
-	private Map<Integer,Student>store=StoreHolder.getStore();
+	private Map<Integer,Student>store=StoreHolder.getInstance().getStore();
 
-	public int generateId() {
+     public int generateId() {
 	    generatedId++;
 	    return generatedId;
 	}
