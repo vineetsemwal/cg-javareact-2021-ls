@@ -7,7 +7,12 @@ public class StoreHolder {
 	
 	private StoreHolder() {}
 
-	public static Map<Integer,Student>store=new HashMap<>();
+	private static Map<Integer,Student>store=new HashMap<>();
+
+	public static Map<Integer,Student>getStore(){
+		return store;
+	}
+
 	
 	
 }

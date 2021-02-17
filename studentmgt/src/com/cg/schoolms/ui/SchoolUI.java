@@ -45,7 +45,7 @@ public class SchoolUI {
         }
         catch(InvalidStudentNameException e){
            System.out.println(e.getMessage());
-             e.printStackTrace();
+           //  e.printStackTrace();
         }
         catch(Exception e){
             System.out.println("something went wrong");
