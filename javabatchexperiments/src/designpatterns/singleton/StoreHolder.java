@@ -1,4 +1,4 @@
-package designpatterns;
+package designpatterns.singleton;
 
 
 public class StoreHolder {
