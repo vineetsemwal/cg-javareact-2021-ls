@@ -10,8 +10,18 @@ public class CalculatorTest {
 	public void setup() {
 		System.out.println("inside setup");
 		calculator=new Calculator();			
+	}	
+	
+	@AfterEach
+	public void clear() {
+		System.out.println("inside clear");
+		calculator=null;
 	}
 	
+	@BeforeAll
+	public static void setupOnce() {
+		System.out.println("inside setupOnce");
+	}
 
 	/**
 	 * test scenario num1= 2 , num2=3
