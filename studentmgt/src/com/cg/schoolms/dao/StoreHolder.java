@@ -6,7 +6,7 @@ import com.cg.schoolms.entities.Student;
 
 public class StoreHolder {
 
-    private static final StoreHolder storeHolder = new StoreHolder();
+   private static final StoreHolder storeHolder = new StoreHolder();
 
     private StoreHolder() {
     }

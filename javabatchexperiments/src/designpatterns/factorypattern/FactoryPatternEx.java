@@ -23,7 +23,7 @@ public class FactoryPatternEx {
     }
 
     public void addCustomer(int id, String name) {
-        Customer customer = factory.get().newCustomer(id,name);
+        Customer customer = factory.newCustomer(id,name);
         customer.setId(id);
         customer.setName(name);
     }

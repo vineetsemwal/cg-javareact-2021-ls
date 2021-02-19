@@ -11,7 +11,7 @@ public class ListEx {
     }
 
     public void start() {
-        List<Product> list = new LinkedList<>();
+        List<Product> list = new ArrayList<>();
         Product product2 = new Product(2, "redmi");
         list.add(product2);
         Product product1 = new Product(1, "samsung galaxy");
