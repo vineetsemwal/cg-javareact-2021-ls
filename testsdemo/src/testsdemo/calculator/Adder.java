@@ -1,10 +1,8 @@
 package testsdemo.calculator;
 
-public class Adder {
+public interface Adder {
 
-    public int add(int a, int b) {
-        System.out.println("inside add");
-        return a+b;
-    }
+	
+    public int add(int a, int b) ;
 
 }

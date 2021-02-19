@@ -48,15 +48,33 @@ public class CalculatorTest {
 		assertFalse(actual);
 	}
 	
+	/**
+	 * case when other unit on which unit under testing is in different class,
+	 *  then mock normally
+	 */
 	@Test
 	public void testAddBy10_1() {
 		Adder adder= Mockito.mock(Adder.class);
 		Mockito.when(adder.add(5,10)).thenReturn(15);
-		Mockito.when(adder.add(10,5)).thenReturn(15);
+		//Mockito.when(adder.add(10,5)).thenReturn(15);
 		calculator.setAdder(adder);
 		int result=calculator.addBy10(5);
 		assertEquals(15, result);
+		Mockito.verify(adder).add(5, 10);
 		
+	}
+	
+	/**
+	 * case when other unit on which unit under testing is in the same class,
+	 *  then use spy
+	 */
+	@Test
+	public void testSubBy10_1() {
+	    Calculator spy  =Mockito.spy(calculator);	 
+	    Mockito.doReturn(5).when(spy).sub(15, 10);
+	    int result=spy.subBy10(15);
+	    assertEquals(5, result);
+	    Mockito.verify(spy).sub(15, 10);
 	}
 	
 	

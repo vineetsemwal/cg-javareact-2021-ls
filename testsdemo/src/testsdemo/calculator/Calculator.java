@@ -19,4 +19,16 @@ public class Calculator {
       return result;
 	}
 	
+	public int sub(int num1, int num2) {
+		System.out.println("inside sub");
+		return num1-num2;
+	}
+	
+	
+	public int subBy10(int number) {
+		System.out.println("inside subby10");
+		int result=sub(number,10);
+		return result;
+	}
+	
 }
