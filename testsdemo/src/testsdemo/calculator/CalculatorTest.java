@@ -1,6 +1,8 @@
 package testsdemo.calculator;
 
 import org.junit.jupiter.api.*;
+import org.mockito.Mockito;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CalculatorTest {
@@ -24,29 +26,7 @@ public class CalculatorTest {
 		System.out.println("inside setupOnce");
 	}
 
-	/**
-	 * test scenario num1= 2 , num2=3
-	 * expectation=5 
-	 */
-	@Test
-	public void testAdd_1() {
-		System.out.println("inside testAdd1");
-		int result=calculator.add(2, 3);
-		assertEquals(5, result);
-	}
-	
-	/**
-	 * test scenario num1= -3 , num2=-5
-	 * expectation=-8 
-	 */
-	@Test
-	public void testAdd_2() {
-		System.out.println("inside testAdd2");
-		int result=calculator.add(-3, -5);
-		assertEquals(-8, result);
-		
-	}
-	
+
 	/**
 	 * test scenario number=4
 	 * expectation : true
@@ -70,6 +50,10 @@ public class CalculatorTest {
 	
 	@Test
 	public void testAddBy10_1() {
+		Adder adder= Mockito.mock(Adder.class);
+		Mockito.when(adder.add(5,10)).thenReturn(15);
+		Mockito.when(adder.add(10,5)).thenReturn(15);
+		calculator.setAdder(adder);
 		int result=calculator.addBy10(5);
 		assertEquals(15, result);
 		
