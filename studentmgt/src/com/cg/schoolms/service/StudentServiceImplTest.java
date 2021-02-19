@@ -85,7 +85,8 @@ class StudentServiceImplTest {
 	}
 
 	/**
-	 * scenario : InvalidIdException is thrown input : id=-1
+	 * scenario : InvalidIdException is thrown when id is smaller than zero
+	 * input : id=-1
 	 */
 	@Test
 	void testFindById_1() {
@@ -95,8 +96,8 @@ class StudentServiceImplTest {
 	}
 
 	/**
-	 * scenario : student does not exist in the store
-	 * 
+	 * scenario : student does not exist in the store for the id
+	 * input : id=12
 	 */
 	@Test
 	void testFindById_2() {
@@ -108,6 +109,8 @@ class StudentServiceImplTest {
 
 	/**
 	 * scenario: student exists in the store
+	 * input : id= 12
+	 * precondition :student object with name=80, id=12, score=80 exists
 	 */
 	@Test
 	void testFindById_3() {
