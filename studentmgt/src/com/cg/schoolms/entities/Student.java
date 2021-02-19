@@ -48,4 +48,24 @@ public class Student{
 	    return text;
 	}
 
+
+	@Override
+	public int hashCode() {
+		return id;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		 if(obj==null || !(obj instanceof Student)) {
+			 return false;
+		 }
+		 Student that=(Student)obj;
+		return this.id==that.id;
+	}
+	
+	
+	
+	
 }

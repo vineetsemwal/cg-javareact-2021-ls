@@ -1,6 +1,7 @@
 package testsdemo.calculator;
 
 import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CalculatorTest {
 
@@ -31,7 +32,7 @@ public class CalculatorTest {
 	public void testAdd_1() {
 		System.out.println("inside testAdd1");
 		int result=calculator.add(2, 3);
-		Assertions.assertEquals(5, result);
+		assertEquals(5, result);
 	}
 	
 	/**
@@ -42,8 +43,37 @@ public class CalculatorTest {
 	public void testAdd_2() {
 		System.out.println("inside testAdd2");
 		int result=calculator.add(-3, -5);
-		Assertions.assertEquals(-8, result);
+		assertEquals(-8, result);
 		
 	}
+	
+	/**
+	 * test scenario number=4
+	 * expectation : true
+	 */
+	@Test
+	public void testIsEven_1() {
+		boolean actual=calculator.isEven(4);
+		assertTrue(actual);
+	}
+	
+	
+	/**
+	 * test scenario number=7
+	 * expectation : false
+	 */
+	@Test
+	public void testIsEven_2() {
+		boolean actual=calculator.isEven(7);
+		assertFalse(actual);
+	}
+	
+	@Test
+	public void testAddBy10_1() {
+		int result=calculator.addBy10(5);
+		assertEquals(15, result);
+		
+	}
+	
 	
 }
