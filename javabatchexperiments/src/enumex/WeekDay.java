@@ -2,6 +2,7 @@ package enumex;
 
 public enum WeekDay {
 
+
     SUNDAY("9am","6pm"),
     MONDAY("9:30am","6:30pm"),
     TUESDAY("9am","6pm"),
@@ -24,4 +25,6 @@ public enum WeekDay {
     public String getEndTime(){
         return endTime;
     }
+
+
 }
