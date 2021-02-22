@@ -9,8 +9,13 @@ public class EnumMain {
             System.out.println(" start time="+weekday.getStartTime()+" endtime="+weekday.getEndTime());
         }
 
-        ClassBreak morning=ClassBreak.MORNING_TEA;
-        System.out.println("morning break="+morning);
+        ClassBreak morning1=ClassBreak.MORNING_TEA;
+        ClassBreak morning2=ClassBreak.MORNING_TEA;
+        ClassBreak lunch1=ClassBreak.LUNCH;
+        ClassBreak lunch2=ClassBreak.LUNCH;
+        System.out.println("morning break="+(morning1==morning2));
+        System.out.println("lunch break="+(lunch1==lunch2));
+
 
     }
 }
