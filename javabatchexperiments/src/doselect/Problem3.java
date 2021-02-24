@@ -1,12 +1,9 @@
 package doselect;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import java.util.stream.*;
 
 public class Problem3 {
 
@@ -69,7 +66,6 @@ class EmployeeInfo {
             Comparator<Employee>comparator=(e1, e2) -> e1.getSalary() - e2.getSalary();
             List<Employee> result = emps.stream().sorted(comparator).collect(Collectors.toList());
             return result;
-
         }
 
     }
