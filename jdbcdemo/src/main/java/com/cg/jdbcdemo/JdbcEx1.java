@@ -4,7 +4,7 @@ import java.sql.*;
 
 import org.postgresql.Driver;
 
-public class JdbcEx {
+public class JdbcEx1 {
 
     public static void main(String args[]) throws SQLException, ClassNotFoundException {
         //step1 : register driver
@@ -20,11 +20,14 @@ public class JdbcEx {
         //step3 create statement
 		Statement statement=connection.createStatement();
 		
-		String insertSql="insert into employees (id,name,balance,age,deptid)  values(14,'yash',13000,21,'d1') ";
-		int count=statement.executeUpdate(insertSql);
-		System.out.println("rwos inserted="+count);
-		
-		String sql="select * from employees";
+		//String insertSql="insert into employees (id,name,balance,age,deptid)  values(14,'yash',13000,21,'d1') ";
+        long queryId=2;
+		String updateSql="update employees set age=23 where id ="+queryId;
+		int count=statement.executeUpdate(updateSql);
+		System.out.println("rows changed="+count);
+
+
+		String sql="select * from employees where id="+queryId;
         //step 4 : execute query using statement object
 		ResultSet resultSet=statement.executeQuery(sql);
         while(resultSet.next()){
