@@ -11,13 +11,19 @@ public class JdbcEx {
         Driver driver =new Driver();
         DriverManager.registerDriver(driver);
         //Class.forName("org.postgresql.Driver");
-
+        
+       
 		//step 2    Create connection : requirement is url , username, password
         String url="jdbc:postgresql://localhost:5432/training";
         String user="arpit", password="arpit";
 		Connection connection =DriverManager.getConnection(url,user,password);
         //step3 create statement
 		Statement statement=connection.createStatement();
+		
+		String insertSql="insert into employees (id,name,balance,age,deptid)  values(14,'yash',13000,21,'d1') ";
+		int count=statement.executeUpdate(insertSql);
+		System.out.println("rwos inserted="+count);
+		
 		String sql="select * from employees";
         //step 4 : execute query using statement object
 		ResultSet resultSet=statement.executeQuery(sql);
@@ -29,6 +35,7 @@ public class JdbcEx {
          String deptId=resultSet.getString("deptid");
          System.out.println(" id:"+id+"-name-"+name+"-age-"+age+"-balance-"+balance+"-dept id-"+deptId);
         }
+        
         statement.close();
         connection.close();
 
