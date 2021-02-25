@@ -12,7 +12,7 @@ public class MapEx {
     }
 
     public void start() {
-       // Comparator<Integer>keyComparator=new IdKeyComparator();
+       Comparator<Integer>keyComparator=new IdKeyComparator();
         Map<Integer, Product> map = new TreeMap<>();
         Product product2 = new Product(2, "redmi");
         Product product1 = new Product(1, "samsung");
