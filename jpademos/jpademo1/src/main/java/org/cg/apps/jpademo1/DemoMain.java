@@ -22,12 +22,19 @@ public class DemoMain {
         Employee surya=new Employee("surya",23);
         add(surya);
 
+
         Employee fetched=findById(mohanId);
         display(fetched);
 
-        delete(surya);
+       //delete(yash);
 
+        //this will update the row in the table because entity object has id which exists in the table
+        surya.setName("suryaaaa");
+        update(surya);
 
+        //this will add a new row in the table because entity object does not have any id value set to it
+        Employee rohit=new Employee("rohit",21);
+        update(rohit);
 
 
     }
@@ -44,7 +51,7 @@ public class DemoMain {
     public void update(Employee employee){
         EntityTransaction transaction = entityManager.getTransaction();
         transaction.begin();
-        //entityManager.persist(employee);
+        employee=entityManager.merge(employee);
         transaction.commit();
         System.out.println("employee updated");
         display(employee);

@@ -13,6 +13,7 @@
 			<property name="javax.persistence.jdbc.user" value="arpit" />
 			<property name="javax.persistence.jdbc.password" value="arpit" />
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+			<!-- create, create-drop, validate, update -->
 			<property name="hibernate.hbm2ddl.auto" value="create"/>
 		</properties>
 	</persistence-unit>
