@@ -37,7 +37,7 @@ public class DemoMain {
         System.out.println("address="+address.getAddressId()+"-"+address.getCity()+"-"+address.getBuilding());
     }
     void displayEmployee(Employee employee) {
-        System.out.println("student-" + employee.getId() + "-" + employee.getName() + "-" + employee.getAge());
+        System.out.println("employee-" + employee.getId() + "-" + employee.getName() + "-" + employee.getAge());
 
     }
 
