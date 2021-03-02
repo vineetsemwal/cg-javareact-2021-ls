@@ -22,7 +22,8 @@ public class SchoolUI {
             display(arpit);
             Student surya = service.addStudent("surya", 75);
             display(surya);
-
+            Student raja= service.addStudent("raja", 75);
+            display(raja);
             Student rohit = service.addStudent("rohit", 80);
             display(rohit);
 
@@ -33,6 +34,16 @@ public class SchoolUI {
             arpit=service.updateName(arpitId,"arpit mehta");
             System.out.println("arpit's name has been updated");
             display(arpit);
+
+            System.out.println("display students with score 75");
+            List<Student>byScoreList=service.findStudentsByScore(75);
+            displayAll(byScoreList);
+
+            System.out.println("display all");
+            List<Student>all= service.findAll();
+            displayAll(all);
+
+
         }catch(InvalidIdException e){
             System.out.println(e.getMessage());
             //e.printStackTrace();

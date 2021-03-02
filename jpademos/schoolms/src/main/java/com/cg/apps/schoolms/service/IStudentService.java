@@ -12,4 +12,8 @@ public interface IStudentService {
     Student findById(int id);
 
     Student updateName(int id, String name );
+
+    List<Student> findAll();
+
+    List<Student> findStudentsByScore(int score);
 }

@@ -3,6 +3,7 @@ package com.cg.apps.schoolms.dao;
 import com.cg.apps.schoolms.entities.Student;
 
 import javax.persistence.EntityManager;
+import java.util.List;
 
 
 public interface IStudentDao {
@@ -13,6 +14,9 @@ public interface IStudentDao {
 
     Student update(Student student);
 
-    EntityManager getEntityManager();
+    List<Student> findAll();
 
+    List<Student> findStudentsByScore(int age);
+
+    EntityManager getEntityManager();
 }

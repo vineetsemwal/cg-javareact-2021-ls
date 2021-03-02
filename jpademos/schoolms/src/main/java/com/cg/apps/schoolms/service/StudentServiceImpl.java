@@ -35,13 +35,25 @@ public class StudentServiceImpl implements IStudentService {
     }
 
     @Override
-    public Student updateName(int id, String newName ){
+    public List<Student> findAll() {
+        List<Student> list = dao.findAll();
+        return list;
+    }
+
+    @Override
+    public List<Student> findStudentsByScore(int score) {
+        List<Student> list = dao.findStudentsByScore(score);
+        return list;
+    }
+
+    @Override
+    public Student updateName(int id, String newName) {
         validateName(newName);
         EntityTransaction transaction = getEntityManager().getTransaction();
         transaction.begin();
-        Student student=findById(id);
+        Student student = findById(id);
         student.setName(newName);
-        student=dao.update(student);
+        student = dao.update(student);
         transaction.commit();
         return student;
     }

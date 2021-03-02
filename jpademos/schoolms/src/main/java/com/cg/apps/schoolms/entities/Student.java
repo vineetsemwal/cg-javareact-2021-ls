@@ -10,7 +10,10 @@ public class Student{
 	@GeneratedValue
 	@Id
 	private Integer id;
+
+	//@Column(name ="stname",nullable=false,unique=true)
 	private String name;
+
 	private int score;
 	public Student(){
 		this("not initialized",-1);
