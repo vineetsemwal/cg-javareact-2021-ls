@@ -7,13 +7,13 @@ import javax.persistence.*;
 public class DemoMain {
     EntityManager entityManager;
 
-    public static void main(String args[]) throws Exception {
+    public static void main(String args[])  {
         DemoMain demo = new DemoMain();
         demo.start();
     }
 
 
-    public void start() throws Exception{
+    public void start() {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("training-ms");
         entityManager = emf.createEntityManager();
         Student mohan = new Student("mohan", 21);
