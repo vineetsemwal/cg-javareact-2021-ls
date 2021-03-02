@@ -3,11 +3,11 @@ package org.cg.apps.jpademo2.entities;
 import javax.persistence.*;
 import java.util.Objects;
 
-@Table(name="students_data")
 @Entity
+@Table(name="students_data")
 public class Student {
 
-   @GeneratedValue
+    @GeneratedValue
     @Id
     private Long id;
     private String name;
