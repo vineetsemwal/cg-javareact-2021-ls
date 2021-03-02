@@ -5,8 +5,7 @@ import java.util.*;
 import com.cg.apps.schoolms.entities.Student;
 import com.cg.apps.schoolms.exceptions.StudentNotFoundException;
 
-import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
+import javax.persistence.*;
 
 public class StudentDaoImpl implements IStudentDao {
 
@@ -44,7 +43,7 @@ public class StudentDaoImpl implements IStudentDao {
 	public List<Student> findStudentsByScore(int score){
 	 	String ql="from Student where score=:scoreArg";
 	 	TypedQuery<Student> query=getEntityManager().createQuery(ql,Student.class);
-	 	query.setParameter("scoreArg",score);
+		query.setParameter("scoreArg",score);
 	 	List<Student>list=query.getResultList();
 	    return list;
 	 }
