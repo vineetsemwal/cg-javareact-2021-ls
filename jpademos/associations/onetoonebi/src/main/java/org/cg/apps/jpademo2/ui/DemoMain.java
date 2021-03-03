@@ -24,7 +24,7 @@ public class DemoMain {
         Integer addressId=address.getAddressId();
         Employee employee =new Employee("rohit",21,address);
         entityManager.persist(employee);
-         address.setEmployee(employee);
+        address.setEmployee(employee);
 
         transaction.commit();
         Long eid=employee.getId();
