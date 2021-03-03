@@ -51,8 +51,8 @@ public class Employee {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Employee student = (Employee) o;
-        return Objects.equals(id, student.id);
+        Employee that = (Employee) o;
+        return Objects.equals(id, that.id);
     }
 
     @Override
