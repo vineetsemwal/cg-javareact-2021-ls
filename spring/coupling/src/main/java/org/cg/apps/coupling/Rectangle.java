@@ -1,6 +1,6 @@
 package org.cg.apps.coupling;
 
-public class Rectangle {
+public class Rectangle implements IShape{
     private double length, breadth;
 
     public Rectangle() {
@@ -28,6 +28,7 @@ public class Rectangle {
         this.breadth = breadth;
     }
 
+    @Override
     public double area() {
         return length * breadth;
     }
