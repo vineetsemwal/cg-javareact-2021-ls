@@ -2,6 +2,7 @@ package org.cg.apps.jpademo2.entities;
 
 import javax.persistence.*;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name="employees_data")
@@ -13,18 +14,13 @@ public class Employee {
     private String name;
     private int age;
 
-   // @JoinColumn(name="deptid",nullable = false)
-    @ManyToOne
-    private Department department;
-
     public Employee(){
 
     }
 
-    public Employee(String name, int age, Department department){
+    public Employee(String name, int age){
         this.name=name;
         this.age=age;
-        this.department=department;
     }
 
     public Long getId() {
@@ -51,12 +47,15 @@ public class Employee {
         this.age = age;
     }
 
-    public Department getDepartment() {
-        return department;
+    @ElementCollection
+    private Set<String>phones;
+
+    public Set<String> getPhones() {
+        return phones;
     }
 
-    public void setDepartment(Department department) {
-        this.department = department;
+    public void setPhones(Set<String> phones) {
+        this.phones = phones;
     }
 
     @Override
