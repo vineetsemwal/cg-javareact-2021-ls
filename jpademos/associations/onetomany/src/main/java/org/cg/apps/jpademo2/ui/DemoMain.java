@@ -36,23 +36,32 @@ public class DemoMain {
         entityManager.persist(dev);
         Integer devId=dev.getDeptId();
 
+         Department testing=new Department("testing",null);
+        entityManager.persist(testing);
+        Integer testingId=testing.getDeptId();
         Employee nisha=new Employee("nisha",21);
         Employee tanisha=new Employee("tanisha",21);
         entityManager.persist(nisha);
         entityManager.persist(tanisha);
-        Set<Employee>testingEmployees=new HashSet<>();
+        Set<Employee>testingEmployees=new  HashSet<>();
         testingEmployees.add(nisha);
         testingEmployees.add(tanisha);
-        Department testing=new Department("testing",testingEmployees);
-        entityManager.persist(testing);
-        Integer testingId=testing.getDeptId();
+        testing.setEmployees(testingEmployees);
+        testing=entityManager.merge(testing);
+
         transaction.commit();
 
-        System.out.println("department found");
+        System.out.println("dev department found");
         Department devFound=entityManager.find(Department.class,devId);
         display(devFound);
         Set<Employee>devFoundEmployees=devFound.getEmployees();
         displayEmployees(devFoundEmployees);
+
+        System.out.println("testing department found");
+        Department testingFound=entityManager.find(Department.class,testingId);
+        Set<Employee>testingFoundEmployees=testingFound.getEmployees();
+        display(testingFound);
+        displayEmployees(testingFoundEmployees);
         entityManager.close();
 
     }
