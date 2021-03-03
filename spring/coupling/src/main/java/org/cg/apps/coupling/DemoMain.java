@@ -18,6 +18,5 @@ public class DemoMain {
         Canvas canvas2=context.getBean(Canvas.class);
         boolean isSame=canvas==canvas2;
         System.out.println("canvas objects same="+isSame);
-        IShape foundShape=context.getBean(IShape.class);
-    }
+       }
 }
