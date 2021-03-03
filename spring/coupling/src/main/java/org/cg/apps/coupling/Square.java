@@ -1,5 +1,6 @@
 package org.cg.apps.coupling;
 
+
 public class Square implements IShape{
 
     private double side;

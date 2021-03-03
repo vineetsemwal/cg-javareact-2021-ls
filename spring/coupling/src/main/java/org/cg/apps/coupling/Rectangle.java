@@ -1,5 +1,8 @@
 package org.cg.apps.coupling;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Rectangle implements IShape{
     private double length, breadth;
 
