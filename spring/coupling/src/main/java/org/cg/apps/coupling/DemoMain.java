@@ -2,7 +2,6 @@ package org.cg.apps.coupling;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.awt.*;
 
 public class DemoMain {
 
