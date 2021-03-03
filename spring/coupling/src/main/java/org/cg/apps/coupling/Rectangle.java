@@ -1,10 +1,16 @@
 package org.cg.apps.coupling;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+//@Scope("prototype")
 @Component
 public class Rectangle implements IShape{
-    private double length, breadth;
+    @Value("${rect.length}")
+    private double length;
+    @Value("${rect.breadth}")
+    private double breadth;
 
     public Rectangle() {
 
