@@ -32,10 +32,12 @@ public class DemoMain {
         devEmployees.add(rohit);
         devEmployees.add(arpit);
 
+        // department created along with the employees
         Department dev=new Department("dev",devEmployees);
         entityManager.persist(dev);
         Integer devId=dev.getDeptId();
 
+        // deprtment is created , employees joined at a later time in this department
          Department testing=new Department("testing",null);
         entityManager.persist(testing);
         Integer testingId=testing.getDeptId();

@@ -45,6 +45,7 @@ public class DemoMain {
         entityManager.persist(tanisha);
         testing=entityManager.merge(testing);
 
+        //nisha changed the department, now she is in dev department
         nisha.setDepartment(dev);
         nisha=entityManager.merge(nisha);
 
