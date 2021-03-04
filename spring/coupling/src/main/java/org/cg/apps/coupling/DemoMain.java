@@ -6,6 +6,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class DemoMain {
 
     public static void main(String args[]){
+        //applicationcontext is the container
         AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
         context.register(JavaConfig.class);
         context.refresh();
@@ -15,8 +16,10 @@ public class DemoMain {
         System.out.println("is shape in canvas null "+(shape==null));
         System.out.println("type of shape is rectangle="+(shape instanceof Rectangle)+" area="+shape.area());
         canvas.draw();
-        Canvas canvas2=context.getBean(Canvas.class);
+
+        Canvas canvas2=context.getBean("canvas",Canvas.class);
         boolean isSame=canvas==canvas2;
         System.out.println("canvas objects same="+isSame);
+
        }
 }

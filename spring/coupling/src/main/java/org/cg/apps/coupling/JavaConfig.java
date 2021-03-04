@@ -1,5 +1,7 @@
 package org.cg.apps.coupling;
 
+import org.cg.apps.coupling.Canvas;
+import org.cg.apps.coupling.Rectangle;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -10,6 +12,7 @@ import org.springframework.context.annotation.PropertySource;
 @Configuration
 public class JavaConfig {
 
+    /*
     @Bean
     public Rectangle rectangle(){
         Rectangle rect=new Rectangle();
@@ -21,6 +24,6 @@ public class JavaConfig {
         Canvas canvas=new Canvas();
          return canvas;
     }
-
+*/
 
 }

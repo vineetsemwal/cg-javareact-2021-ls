@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 //@Scope("prototype")
-//@Component
+@Component
 public class Rectangle implements IShape{
     @Value("${rect.length}")
     private double length;

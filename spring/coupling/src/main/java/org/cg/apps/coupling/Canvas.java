@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 //@Scope("prototype")
-//@Component
+@Component
 public class Canvas {
 
     private IShape shape;
@@ -32,6 +32,7 @@ public class Canvas {
     public IShape getShape(){
         return shape;
     }
+
 
 
     public  void  draw(){
