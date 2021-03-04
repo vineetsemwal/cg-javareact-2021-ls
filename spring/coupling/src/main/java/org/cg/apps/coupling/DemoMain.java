@@ -10,7 +10,6 @@ public class DemoMain {
         AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
         context.register(JavaConfig.class);
         context.refresh();
-        context.registerShutdownHook();
         System.out.println("before we have fetched any thing");
         Canvas canvas=context.getBean(Canvas.class);
         System.out.println("is canvas null"+(canvas==null));
@@ -24,10 +23,7 @@ public class DemoMain {
         boolean isSame=canvas==canvas2;
         System.out.println("canvas objects same="+isSame);
 
-      //  context.removeBeanDefinition("rectangle");
-
-
-         context.close();
+        context.close();
 
        }
 }
