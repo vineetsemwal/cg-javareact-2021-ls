@@ -4,6 +4,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 //@Scope("prototype")
 @Component
 public class Rectangle implements IShape{
@@ -37,9 +40,20 @@ public class Rectangle implements IShape{
         this.breadth = breadth;
     }
 
+    @PostConstruct
+    public void afterInit(){
+        System.out.println("inside Rectangle after initialization done");
+        System.out.println("length="+length+" breadth="+breadth);
+    }
+
     @Override
     public double area() {
         return length * breadth;
+    }
+
+    @PreDestroy
+    public void clear() {
+        System.out.println("inside Rectangle's clear");
     }
 
 }

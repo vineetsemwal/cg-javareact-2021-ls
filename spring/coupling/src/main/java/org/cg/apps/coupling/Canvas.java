@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+
 //@Scope("prototype")
 @Component
 public class Canvas {
@@ -35,6 +37,11 @@ public class Canvas {
         return shape;
     }
 
+    @PostConstruct
+    public void afterInitialization(){
+        System.out.println("inside Canvas, after bean init");
+        System.out.println("details of shape it is holding shape area "+shape.area());
+    }
 
 
     public  void  draw(){
