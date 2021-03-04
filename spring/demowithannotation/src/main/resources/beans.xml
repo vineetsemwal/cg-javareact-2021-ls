@@ -5,22 +5,11 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
 
-
-    <bean id="rectangle" class="org.cg.apps.coupling.Rectangle">
-        <property name="length" value="10"/>
-        <property name="breadth" value="7"/>
-
-    </bean>
-
-    <bean id="square" class="org.cg.apps.coupling.Square">
-        <property name="side" value="10"/>
-
-    </bean>
+<context:component-scan base-package="org.cg.apps.coupling"/>
+  <context:annotation-config/>
 
 
-    <bean id="canvas" class="org.cg.apps.coupling.Canvas">
-        <property name="shape" ref="rectangle"/>
-    </bean>
-
-
+  <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <property name="location" value="classpath:shape.properties"/>
+  </bean>
 </beans>
