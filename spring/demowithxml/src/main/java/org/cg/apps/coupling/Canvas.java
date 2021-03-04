@@ -5,8 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-//@Scope("prototype")
-@Component
+
 public class Canvas {
 
     private IShape shape;
@@ -24,8 +23,6 @@ public class Canvas {
      * canvas.setShape(rectangle);
      */
 
-    @Qualifier("rectangle")
-    @Autowired
     public void setShape(IShape shape){
         System.out.println("inside shape,shape is set now ");
         this.shape=shape;

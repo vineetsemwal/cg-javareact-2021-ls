@@ -11,19 +11,20 @@ import org.springframework.context.annotation.PropertySource;
 @ComponentScan("org.cg.apps.coupling")
 @Configuration
 public class JavaConfig {
+/*
 
-    /*
     @Bean
-    public Rectangle rectangle(){
+    public IShape rectangle(){
         Rectangle rect=new Rectangle();
         return rect;
     }
 
     @Bean
-    public Canvas canvas() {
-        Canvas canvas=new Canvas();
-         return canvas;
-    }
+   public IShape square(){
+        return new Square(56);
+   }
 */
+
+
 
 }

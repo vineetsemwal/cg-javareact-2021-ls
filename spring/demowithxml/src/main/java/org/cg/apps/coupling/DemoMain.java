@@ -1,15 +1,14 @@
 package org.cg.apps.coupling;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
 public class DemoMain {
 
     public static void main(String args[]){
         //applicationcontext is the container
-        AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
-        context.register(JavaConfig.class);
-        context.refresh();
+        ClassPathXmlApplicationContext context=new ClassPathXmlApplicationContext("beans.xml");
         Canvas canvas=context.getBean(Canvas.class);
         System.out.println("is canvas null"+(canvas==null));
         IShape shape=canvas.getShape();
