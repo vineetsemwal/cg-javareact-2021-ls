@@ -2,12 +2,15 @@ package com.cg.repository;
 
 import com.cg.entities.Employee;
 import com.cg.exceptions.EmployeeNotFoundException;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
+
+@Repository
 public class EmployeeRepositoryImpl implements IEmployeeRepository {
 
     private Map<Integer, Employee> employeeStore = StoreHolder.getInstance().getEmployeeStore();

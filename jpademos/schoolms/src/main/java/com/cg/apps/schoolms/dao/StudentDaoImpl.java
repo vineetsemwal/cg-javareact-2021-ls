@@ -4,9 +4,12 @@ import java.util.*;
 
 import com.cg.apps.schoolms.entities.Student;
 import com.cg.apps.schoolms.exceptions.StudentNotFoundException;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.*;
 
+// @Component
+@Repository
 public class StudentDaoImpl implements IStudentDao {
 
 	 private EntityManager entityManager;

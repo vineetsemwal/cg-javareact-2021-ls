@@ -7,6 +7,9 @@ import com.cg.repository.DepartmentRepositoryImpl;
 import com.cg.repository.EmployeeRepositoryImpl;
 import com.cg.repository.IDepartmentRepository;
 import com.cg.repository.IEmployeeRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -15,10 +18,15 @@ import java.util.function.BinaryOperator;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+//@Component
+@Service
 public class EmployeeServiceImpl implements IEmployeeService {
 
-    private IEmployeeRepository employeeRepository = new EmployeeRepositoryImpl();
-    private IDepartmentRepository departmentRepository = new DepartmentRepositoryImpl();
+    @Autowired
+    private IEmployeeRepository employeeRepository ;
+
+    @Autowired
+    private IDepartmentRepository departmentRepository;
 
     @Override
     public double totalSalaries() {

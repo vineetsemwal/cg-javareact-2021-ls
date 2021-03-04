@@ -5,12 +5,23 @@ import java.util.List;
 import com.cg.apps.schoolms.dao.*;
 import com.cg.apps.schoolms.entities.*;
 import com.cg.apps.schoolms.exceptions.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.persistence.*;
 
+//@Component
+@Service
 public class StudentServiceImpl implements IStudentService {
 
-    private IStudentDao dao = new StudentDaoImpl();
+
+    private IStudentDao dao;
+
+    @Autowired
+    public void setDao(IStudentDao dao){
+        this.dao = dao;
+    }
+
 
     public EntityManager getEntityManager() {
         return dao.getEntityManager();

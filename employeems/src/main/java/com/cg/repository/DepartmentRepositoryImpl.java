@@ -1,12 +1,17 @@
 package com.cg.repository;
 
 import com.cg.entities.Department;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
+
+//@Component
+@Repository
 public class DepartmentRepositoryImpl implements IDepartmentRepository{
    private Map<Integer,Department>store=StoreHolder.getInstance().getDepartmentStore();
 
