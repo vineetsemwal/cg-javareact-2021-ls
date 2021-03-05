@@ -2,8 +2,10 @@ plugins {
     id 'java'
 }
 
-group 'com.cg.apps'
-version '1.0'
+group = 'com.cg.apps'
+version = '1.0'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
     mavenCentral()

@@ -1,4 +1,4 @@
-package org.cg.apps.coupling;
+package com.cg.apps.bootdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,9 +13,9 @@ import javax.annotation.PreDestroy;
 //@Scope("prototype")
 @Component
 public class Rectangle implements IShape{
-//    @Value("${rect.length}")
+   @Value("${rect.length}")
     private double length;
-  //  @Value("${rect.breadth}")
+   @Value("${rect.breadth}")
     private double breadth;
 
 
@@ -45,15 +45,6 @@ public class Rectangle implements IShape{
 
     public void setBreadth(double breadth) {
         this.breadth = breadth;
-    }
-
-    @PostConstruct
-    public void afterInit(){
-        System.out.println("inside Rectangle after initialization done");
-        System.out.println("length="+length+" breadth="+breadth);
-        length=environment.getProperty("rect.length",Double.class);
-        breadth=environment.getProperty("rect.breadth",Double.class);
-        System.out.println("inside afterinit ,length fetched="+length+" breadth="+breadth);
     }
 
     @Override
