@@ -1,6 +1,8 @@
 package com.cg.apps.schoolmswithoutjpa.controllers;
 
 import com.cg.apps.schoolmswithoutjpa.entities.Student;
+import com.cg.apps.schoolmswithoutjpa.exceptions.InvalidScoreException;
+import com.cg.apps.schoolmswithoutjpa.exceptions.InvalidStudentNameException;
 import com.cg.apps.schoolmswithoutjpa.exceptions.StudentNotFoundException;
 import com.cg.apps.schoolmswithoutjpa.service.IStudentService;
 
@@ -13,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/students")
 @RestController
 public class StudentRestController {
-    HttpStatus status;
 
     @Autowired
     private IStudentService service;
@@ -22,7 +23,7 @@ public class StudentRestController {
      * /students/byid/2
      */
     @GetMapping(value = "/byid/{id}")
-    public Student fetchStudent(@PathVariable("id") int studentId) {
+    public Student fetchStudent(@PathVariable("id") Integer studentId) {
         Student student = service.findById(studentId);
         return student;
     }
@@ -58,11 +59,6 @@ public class StudentRestController {
         return "student deleted for id="+student.getId();
     }
 
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    @ExceptionHandler(StudentNotFoundException.class)
-    public String handleStudentNotFound(StudentNotFoundException e){
-        return  e.getMessage();
-    }
 
 
 }

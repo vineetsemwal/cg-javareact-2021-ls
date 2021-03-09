@@ -44,6 +44,7 @@ public class StudentServiceImpl implements IStudentService{
 
 	@Override
 	public Student updateName(int id, String name){
+		validateName(name);
 		Student student=findById(id);
 		student.setName(name);
 		student=dao.update(student);
