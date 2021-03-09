@@ -1,16 +1,19 @@
 package com.cg.apps.schoolmswithoutjpa.controllers;
 
 import com.cg.apps.schoolmswithoutjpa.entities.Student;
+import com.cg.apps.schoolmswithoutjpa.exceptions.StudentNotFoundException;
 import com.cg.apps.schoolmswithoutjpa.service.IStudentService;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/students")
 @RestController
 public class StudentRestController {
+    HttpStatus status;
 
     @Autowired
     private IStudentService service;
@@ -36,12 +39,12 @@ public class StudentRestController {
     /**
      * in post request ,data is sent as part of request body
      */
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/add")
     public String addStudent(@RequestBody Student requestData) {
         Student created = service.addStudent(requestData.getName(), requestData.getScore());
         return "created student with id=" + created.getId();
     }
-
 
     @PutMapping("/changename")
     public Student changeName(@RequestBody Student student) {
@@ -53,6 +56,12 @@ public class StudentRestController {
     public String delete(@RequestBody Student student){
         service.deleteById(student.getId());
         return "student deleted for id="+student.getId();
+    }
+
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ExceptionHandler(StudentNotFoundException.class)
+    public String handleStudentNotFound(StudentNotFoundException e){
+        return  e.getMessage();
     }
 
 
