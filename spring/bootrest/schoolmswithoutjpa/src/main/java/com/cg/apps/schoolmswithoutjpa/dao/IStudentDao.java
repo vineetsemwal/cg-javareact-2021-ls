@@ -12,4 +12,7 @@ public interface IStudentDao {
 
     List<Student>findAll();
 
+    Student update(Student  student);
+
+    void deleteById(int id);
 }

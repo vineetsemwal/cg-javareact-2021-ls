@@ -13,4 +13,8 @@ public interface IStudentService {
 
     List<Student>findAll();
 
+    Student updateName(int id, String name);
+
+    void deleteById(int id);
+
 }

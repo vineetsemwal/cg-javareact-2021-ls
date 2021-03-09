@@ -39,6 +39,12 @@ public class StudentDaoImpl implements IStudentDao {
 	}
 
 	@Override
+	public Student update(Student  student){
+		store.put(student.getId(),student);
+		return student;
+	}
+
+	@Override
 	public Student findById(int id) {
 		if(!store.containsKey(id)) {
 			throw new StudentNotFoundException("student doesn't exist for id="+id);
@@ -54,4 +60,9 @@ public class StudentDaoImpl implements IStudentDao {
 		return list;		
 	}
 
+	@Override
+	public void deleteById(int id) {
+		store.remove(id);
+
+	}
 }

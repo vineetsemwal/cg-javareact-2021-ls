@@ -42,6 +42,19 @@ public class StudentServiceImpl implements IStudentService{
 		return students;
 	}
 
+	@Override
+	public Student updateName(int id, String name){
+		Student student=findById(id);
+		student.setName(name);
+		student=dao.update(student);
+		return student;
+	}
+
+	@Override
+	public void deleteById(int id) {
+       dao.deleteById(id);
+	}
+
 	void validateScore(int score){
 		if(score<0){
          throw new InvalidScoreException("score can't be negative");
