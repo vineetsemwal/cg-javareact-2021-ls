@@ -56,9 +56,10 @@ public class StudentRestController {
     }
 
     @PutMapping("/changename")
-    public Student changeName(@RequestBody ChangeNameRequest requestData) {
+    public StudentDetails changeName(@RequestBody ChangeNameRequest requestData) {
         Student student = service.updateName(requestData.getId(), requestData.getName());
-        return student;
+        StudentDetails desired=util.toDetails(student);
+        return desired;
     }
 
     @DeleteMapping("/delete")
