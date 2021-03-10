@@ -30,6 +30,15 @@ public class StudentServiceImpl implements IStudentService{
 		return student;
 	}
 
+	@Transactional
+	@Override
+	public Student changeName(int id, String name){
+        Student student=findById(id);
+	    student.setName(name);
+	    student=dao.update(student);
+	    return student;
+	}
+
 	@Override
 	public Student findById(int id) {
 		validateId(id);

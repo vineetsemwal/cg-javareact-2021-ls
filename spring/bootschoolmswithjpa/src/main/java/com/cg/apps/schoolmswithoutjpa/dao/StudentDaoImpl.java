@@ -42,4 +42,10 @@ public class StudentDaoImpl implements IStudentDao {
 		return students;
 	}
 
+
+	@Override
+	public Student update(Student student) {
+		student=entityManager.merge(student);
+	    return student;
+	}
 }

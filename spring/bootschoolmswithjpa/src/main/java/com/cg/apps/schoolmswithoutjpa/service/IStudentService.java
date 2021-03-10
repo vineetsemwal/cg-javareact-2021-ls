@@ -13,4 +13,6 @@ public interface IStudentService {
 
     List<Student>findAll();
 
+    Student changeName(int id, String name);
+
 }
