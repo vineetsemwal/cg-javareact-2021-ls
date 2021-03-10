@@ -1,6 +1,6 @@
 package com.cg.apps.schoolmswithoutjpa;
 
-import com.cg.apps.schoolmswithoutjpa.ui.SchoolUI;
+import com.cg.apps.schoolmswithoutjpa.studentms.ui.SchoolUI;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
