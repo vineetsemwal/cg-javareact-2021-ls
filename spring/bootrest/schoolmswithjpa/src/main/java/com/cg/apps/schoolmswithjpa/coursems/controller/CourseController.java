@@ -3,6 +3,7 @@ package com.cg.apps.schoolmswithjpa.coursems.controller;
 import com.cg.apps.schoolmswithjpa.coursems.dto.AddCourseRequest;
 import com.cg.apps.schoolmswithjpa.coursems.dto.AddStudentToCourseRequest;
 import com.cg.apps.schoolmswithjpa.coursems.dto.CourseDetails;
+import com.cg.apps.schoolmswithjpa.coursems.dto.RemoveStudentFromCourseRequest;
 import com.cg.apps.schoolmswithjpa.coursems.entities.Course;
 import com.cg.apps.schoolmswithjpa.coursems.service.ICourseService;
 import com.cg.apps.schoolmswithjpa.coursems.util.CourseUtil;
@@ -39,6 +40,13 @@ public class CourseController {
       Course course=  courseService.addStudentInCourse(requestData.getCourseId(),requestData.getStudentId());
       CourseDetails details=courseUtil.toCourseDetails(course);
       return details;
+    }
+
+    @PutMapping("/students/remove")
+    public CourseDetails removeStudentFromCourse(@RequestBody RemoveStudentFromCourseRequest data){
+       Course course=courseService.removeStudentFromCourse(data.getCourseId(),data.getStudentId());
+        CourseDetails details=courseUtil.toCourseDetails(course);
+        return details;
     }
 
 }

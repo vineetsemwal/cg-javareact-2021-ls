@@ -45,7 +45,6 @@ public class CourseServiceImpl implements ICourseService{
        }
        Student student=studentDao.findById(studentId);
        students.add(student);
-       course=courseDao.update(course);
        student.setCourse(course);
        studentDao.update(student);
        return course;
@@ -61,6 +60,8 @@ public class CourseServiceImpl implements ICourseService{
         }
         Student student=studentDao.findById(studentId);
         students.remove(student);
+        student.setCourse(null);
+        studentDao.update(student);
         return course;
     }
 }
