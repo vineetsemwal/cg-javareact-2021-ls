@@ -6,7 +6,7 @@ import javax.validation.constraints.Size;
 public class ChangeNameRequest {
     private int id;
 
-    @Size(min = 3, max=10)
+    @Size( max=10)
     @NotBlank
     private String name;
 
