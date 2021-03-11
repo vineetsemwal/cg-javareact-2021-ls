@@ -10,6 +10,7 @@ import com.cg.apps.schoolmswithjpa.studentms.service.IStudentService;
 import java.util.List;
 
 import com.cg.apps.schoolmswithjpa.studentms.util.StudentUtil;
+import org.slf4j.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +18,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/students")
 @RestController
 public class StudentRestController {
+
+    private static final Logger LOG=LoggerFactory.getLogger(StudentRestController.class);
 
     @Autowired
     private IStudentService service;
@@ -29,6 +32,8 @@ public class StudentRestController {
      */
     @GetMapping(value = "/byid/{id}")
     public StudentDetails fetchStudent(@PathVariable("id") Integer studentId) {
+       // System.out.println("studentid in fetchstudent in StudentRestController "+studentId);
+        LOG.debug("studentid in fetchstudent in StudentRestController "+studentId);
         Student student = service.findById(studentId);
         StudentDetails details=util.toDetails(student);
         return details;
