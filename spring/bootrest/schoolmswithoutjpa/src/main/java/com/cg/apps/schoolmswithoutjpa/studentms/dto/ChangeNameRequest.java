@@ -1,7 +1,13 @@
 package com.cg.apps.schoolmswithoutjpa.studentms.dto;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
 public class ChangeNameRequest {
     private int id;
+
+    @Size(min = 3, max=10)
+    @NotBlank
     private String name;
 
     public int getId() {

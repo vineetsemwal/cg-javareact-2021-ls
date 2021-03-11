@@ -37,6 +37,7 @@ public class CentralizedExceptionHandler {
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ExceptionHandler(Exception.class)
     public String handleCatchAll(Exception e){
+        Log.error("exception occured",e);
         return e.getMessage();
     }
 
