@@ -6,9 +6,11 @@ import com.cg.apps.schoolmswithoutjpa.coursems.dto.CourseDetails;
 import com.cg.apps.schoolmswithoutjpa.coursems.entities.Course;
 import com.cg.apps.schoolmswithoutjpa.coursems.service.ICourseService;
 import com.cg.apps.schoolmswithoutjpa.coursems.util.CourseUtil;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+@Api("courses")
 @RequestMapping("/courses")
 @RestController
 public class CourseController {

@@ -11,6 +11,7 @@ import com.cg.apps.schoolmswithoutjpa.studentms.service.IStudentService;
 import java.util.List;
 
 import com.cg.apps.schoolmswithoutjpa.studentms.util.StudentUtil;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
+@Api("students")
 @Validated
 @RequestMapping("/students")
 @RestController
