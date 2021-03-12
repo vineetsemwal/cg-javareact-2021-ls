@@ -12,6 +12,9 @@ import java.util.List;
 
 import com.cg.apps.schoolmswithoutjpa.studentms.util.StudentUtil;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
@@ -35,10 +38,18 @@ public class StudentRestController {
     /**
      * /students/byid/2
      */
+    /*
+    @ApiOperation(value = "finds student by id", response = StudentDetails.class, produces = "json")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "successfully fetched student by id"),
+            @ApiResponse(code = 404, message = "student not found for the id"),
+            @ApiResponse(code = 401,message="client is not authorized to access this rest endpoint")
+    })
+    */
     @GetMapping("/byid/{id}")
-    public StudentDetails fetchStudent(@PathVariable("id")  Integer studentId) {
+    public StudentDetails fetchStudent(@PathVariable("id") Integer studentId) {
         Student student = service.findById(studentId);
-        StudentDetails details=util.toDetails(student);
+        StudentDetails details = util.toDetails(student);
         return details;
     }
 
@@ -63,7 +74,7 @@ public class StudentRestController {
     @GetMapping
     public List<StudentDetails> allStudents() {
         List<Student> list = service.findAll();
-        List<StudentDetails>desired=util.toDetailsList(list);
+        List<StudentDetails> desired = util.toDetailsList(list);
         return desired;
     }
 
@@ -80,16 +91,15 @@ public class StudentRestController {
     @PutMapping("/changename")
     public StudentDetails changeName(@RequestBody @Valid ChangeNameRequest requestData) {
         Student student = service.updateName(requestData.getId(), requestData.getName());
-        StudentDetails desired=util.toDetails(student);
+        StudentDetails desired = util.toDetails(student);
         return desired;
     }
 
     @DeleteMapping("/delete")
-    public String delete(@RequestBody DeleteStudentRequest requestData){
+    public String delete(@RequestBody DeleteStudentRequest requestData) {
         service.deleteById(requestData.getId());
-        return "student deleted for id="+requestData.getId();
+        return "student deleted for id=" + requestData.getId();
     }
-
 
 
 }
