@@ -72,17 +72,20 @@ b) guest checked out from hotel
 c) transaction history of a guest
  
  GuestTransaction{
- id:Long
+
+id:Long
 
 amount: double
 
 dateTime: LocalDateTime
 
 guest:Guest
- }
+
+}
 
 
 Guest {
+
 id:Long
 
 name: String
