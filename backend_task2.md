@@ -15,9 +15,13 @@ com.cg.apps.roomms
 
 **Operations**
 1) find all available rooms in hotel
+
 2) Allot Room for a guest in hotel
+
 3) guest can checkout
+
 4) find all guests currently living in hotel
+
 5) find all guests checkedOut today from hotel
 
 
@@ -69,65 +73,103 @@ c) transaction history of a guest
  
  GuestTransaction{
  id:Long
- amount: double
- dateTime: LocalDateTime
- guest:Guest
+
+amount: double
+
+dateTime: LocalDateTime
+
+guest:Guest
  }
- 
+
+
 Guest {
 id:Long
+
 name: String
+
 adharId: String
+
 room:Room
+
 rentedDateTime:LocalDateTime;
+
 transactions: List<GuestTransaction>
+
 recentTransaction: GuestTransaction
+
 checkoutDateTime: LocalDateTime
+
 }
 
 
 
 IGuestService{
+
 Guest findById(Long guestId)
+
 Guest allotRoom(String adharId, String guestName, Long hotelId, int roomNumber, int floorNumber, double rent)
+
 List<GuestTransaction>transactionsHistory(Long guestId)
+
 Guest checkout(Long guestId, Long hotelId, int roomNumber, int floorNumber)
 
 }
 
 
 Hotel{
+
 hotelId : Long
+
 hotelName: String
+
 address: String 
+
 rooms: List<Room>
 
 }
 
 IHotelService{
+
 Hotel findById(Long hotelId)
+
 Hotel addHotel(String hotelName, String address, List<Room> rooms)
+
 Set<Guest>findAllGuestsLivingInHotel(Long hotelId)
+
 List<Guest>findAllGuestsCheckedOutTodayInHotel(Long hotelId)
+
 }
 
 
 Room {
+
 roomId:Long
+
 floorNumer: Integer
+
 roomNumber: Integer
+
 hotel : Hotel
+
 available : Boolean
+
 cost: double
+
 }
 
 
 IRoomService{
+
 Room addroom(Long hotelId, int floorNo, int roomNo) 
+
 Room findById(Long roomId)
+
 Room findRoom(int floorNo, int roomNo)
+
 List<Room>findAllRoomsInHotel(Long hotelId)
+
 List<Room>availableRoomsInHotel(Long hotelId)
+
 }
 
  
