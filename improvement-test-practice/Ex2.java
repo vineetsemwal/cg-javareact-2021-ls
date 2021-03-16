@@ -19,7 +19,7 @@ public class Ex2 {
 	
 	
 
-	public String[] conversion(HashMap<String, String> map, String toFind) {
+	public String[] conversion(Map<String, String> map, String toFind) {
 		List<String>keysList=new ArrayList<>();
 		Set<String> keys = map.keySet();
 		for (String key : keys) {
