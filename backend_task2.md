@@ -96,7 +96,7 @@ room:Room
 
 rentedDateTime:LocalDateTime;
 
-transactions: List<GuestTransaction>
+transactions: List <GuestTransaction>
 
 recentTransaction: GuestTransaction
 
@@ -112,7 +112,7 @@ Guest findById(Long guestId)
 
 Guest allotRoom(String adharId, String guestName, Long hotelId, int roomNumber, int floorNumber, double rent)
 
-List<GuestTransaction>transactionsHistory(Long guestId)
+List <GuestTransaction> transactionsHistory(Long guestId)
 
 Guest checkout(Long guestId, Long hotelId, int roomNumber, int floorNumber)
 
@@ -127,7 +127,7 @@ hotelName: String
 
 address: String 
 
-rooms: List<Room>
+rooms: List <Room>
 
 }
 
@@ -135,11 +135,11 @@ IHotelService{
 
 Hotel findById(Long hotelId)
 
-Hotel addHotel(String hotelName, String address, List<Room> rooms)
+Hotel addHotel(String hotelName, String address, List <Room> rooms)
 
-Set<Guest>findAllGuestsLivingInHotel(Long hotelId)
+Set <Guest>  findAllGuestsLivingInHotel(Long hotelId)
 
-List<Guest>findAllGuestsCheckedOutTodayInHotel(Long hotelId)
+List <Guest>  findAllGuestsCheckedOutTodayInHotel(Long hotelId)
 
 }
 
@@ -163,15 +163,15 @@ cost: double
 
 IRoomService{
 
-Room addroom(Long hotelId, int floorNo, int roomNo) 
+Room addroom(Long hotelId, int floorNo, int roomNo, double cost) 
 
 Room findById(Long roomId)
 
 Room findRoom(Long hotelId,int floorNo, int roomNo)
 
-List<Room>findAllRoomsInHotel(Long hotelId)
+List <Room>  findAllRoomsInHotel(Long hotelId)
 
-List<Room>availableRoomsInHotel(Long hotelId)
+List <Room>  availableRoomsInHotel(Long hotelId)
 
 }
 
