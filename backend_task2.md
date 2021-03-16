@@ -167,7 +167,7 @@ Room addroom(Long hotelId, int floorNo, int roomNo)
 
 Room findById(Long roomId)
 
-Room findRoom(int floorNo, int roomNo)
+Room findRoom(Long hotelId,int floorNo, int roomNo)
 
 List<Room>findAllRoomsInHotel(Long hotelId)
 
