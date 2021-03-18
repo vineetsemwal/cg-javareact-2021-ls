@@ -20,6 +20,9 @@ public class StudentServiceImpl implements IStudentService {
     @Autowired
     private IStudentRepository repository;
 
+    public void setRepository(IStudentRepository repository){
+        this.repository = repository;
+    }
 
 
     @Override
