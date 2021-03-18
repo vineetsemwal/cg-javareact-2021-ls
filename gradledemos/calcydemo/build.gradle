@@ -27,7 +27,13 @@ repositories {
 dependencies {
  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.1'
  testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.7.1'
- 
+    // https://mvnrepository.com/artifact/org.mockito/mockito-core
+    testImplementation group: 'org.mockito', name: 'mockito-core', version: '2.28.2'
+
+}
+
+test {
+    useJUnitPlatform()
 }
 
 
