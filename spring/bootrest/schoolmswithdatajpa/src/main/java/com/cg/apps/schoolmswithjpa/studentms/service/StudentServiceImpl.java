@@ -9,6 +9,7 @@ import com.cg.apps.schoolmswithjpa.studentms.exceptions.InvalidIdException;
 import com.cg.apps.schoolmswithjpa.studentms.exceptions.InvalidScoreException;
 import com.cg.apps.schoolmswithjpa.studentms.exceptions.InvalidStudentNameException;
 import com.cg.apps.schoolmswithjpa.studentms.exceptions.StudentNotFoundException;
+import com.cg.apps.schoolmswithjpa.studentms.util.StudentUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,9 +21,8 @@ public class StudentServiceImpl implements IStudentService {
     @Autowired
     private IStudentRepository repository;
 
-    public void setRepository(IStudentRepository repository){
-        this.repository = repository;
-    }
+    @Autowired
+    private StudentUtil util;
 
 
     @Override
@@ -40,7 +40,9 @@ public class StudentServiceImpl implements IStudentService {
     public Student addStudent(String name, int score) {
         validateName(name);
         validateScore(score);
-        Student student=new Student(name, score);
+        Student student=util.newStudent();
+        student.setName(name);
+        student.setScore(score);
         student=repository.save(student);
        return student;
     }

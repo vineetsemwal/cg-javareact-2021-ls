@@ -12,6 +12,10 @@ import java.util.List;
 @Component
 public class StudentUtil {
 
+    public Student newStudent(){
+        return new Student();
+    }
+
     public StudentDetails toDetails(Student student){
         StudentDetails details=new StudentDetails();
         details.setId(student.getId());

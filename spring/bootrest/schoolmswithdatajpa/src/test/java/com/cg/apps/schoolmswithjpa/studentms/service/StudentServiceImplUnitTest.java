@@ -2,6 +2,7 @@ package com.cg.apps.schoolmswithjpa.studentms.service;
 
 import com.cg.apps.schoolmswithjpa.studentms.dao.IStudentRepository;
 import com.cg.apps.schoolmswithjpa.studentms.entities.Student;
+import com.cg.apps.schoolmswithjpa.studentms.util.StudentUtil;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -20,10 +21,14 @@ public class StudentServiceImplUnitTest {
 
     @Mock
     IStudentRepository repository;
+    @Mock
+    StudentUtil util;
 
     @Spy
     @InjectMocks
     StudentServiceImpl service;
+
+
 
 
     /**
@@ -31,18 +36,18 @@ public class StudentServiceImplUnitTest {
      */
     @Test
     public void testAdd_1() {
-        System.out.println("inside test add");
-        System.out.println("service=" + service + " repository=" + repository);
         String name = "rohit";
         int score = 90;
         doNothing().when(service).validateName(name);
         doNothing().when(service).validateScore(score);
         Student saved = Mockito.mock(Student.class);
-        when(repository.save(Mockito.any(Student.class))).thenReturn(saved);
+        Student student = Mockito.mock(Student.class);
+        when(util.newStudent()).thenReturn(student);
+        when(repository.save(student)).thenReturn(saved);
         Student result = service.addStudent(name, score);
         Assertions.assertNotNull(result);
         Assertions.assertEquals(saved, result);
-        verify(repository).save(Mockito.any(Student.class));
+        verify(repository).save(student);
         verify(service).validateScore(score);
         verify(service).validateName(name);
 

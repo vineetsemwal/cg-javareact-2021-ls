@@ -5,6 +5,7 @@ import com.cg.apps.schoolmswithjpa.studentms.exceptions.InvalidIdException;
 import com.cg.apps.schoolmswithjpa.studentms.exceptions.InvalidScoreException;
 import com.cg.apps.schoolmswithjpa.studentms.exceptions.InvalidStudentNameException;
 import com.cg.apps.schoolmswithjpa.studentms.exceptions.StudentNotFoundException;
+import com.cg.apps.schoolmswithjpa.studentms.util.StudentUtil;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -22,7 +23,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
-@Import(StudentServiceImpl.class)
+@Import({StudentServiceImpl.class, StudentUtil.class})
 @DataJpaTest
 @AutoConfigureTestDatabase
 class StudentServiceImplTest {
