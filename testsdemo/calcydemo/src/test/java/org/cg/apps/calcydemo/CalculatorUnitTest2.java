@@ -7,6 +7,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import static org.mockito.Mockito.*;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -35,16 +36,16 @@ public class CalculatorUnitTest2 {
      */
     @Test
     public void testAdd_2(){
-        Mockito.when(adder.add(3,5)).thenReturn(8);
+        when(adder.add(3,5)).thenReturn(8);
         int result=calculator.add(3,5);
         Assertions.assertEquals(8,result);
-        Mockito.verify(adder).add(3,5);
+        verify(adder).add(3,5);
     }
 
     @Test
     public void testAdd_3(){
         //Mockito.when(spy.add(4,10)).thenReturn(14);
-        Mockito.doReturn(14).when(spy).add(4,10);
+        doReturn(14).when(spy).add(4,10);
         int result=spy.addBy10(4);
         Assertions.assertEquals(14,result);
     }
