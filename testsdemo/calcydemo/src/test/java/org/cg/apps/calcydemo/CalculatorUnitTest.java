@@ -31,5 +31,14 @@ public class CalculatorUnitTest {
 	    Mockito.verify(adder).add(3,5);
 	}
 
+	@Test
+	public void testAdd_3(){
+		Calculator spy= Mockito.spy(calculator);
+		//Mockito.when(spy.add(4,10)).thenReturn(14);
+		Mockito.doReturn(14).when(spy).add(4,10);
+		int result=spy.addBy10(4);
+	    Assertions.assertEquals(14,result);
+	}
+
 
 }
