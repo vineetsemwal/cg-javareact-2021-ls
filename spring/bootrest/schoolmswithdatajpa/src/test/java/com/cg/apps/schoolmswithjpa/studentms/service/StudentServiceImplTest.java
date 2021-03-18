@@ -2,6 +2,7 @@ package com.cg.apps.schoolmswithjpa.studentms.service;
 
 import com.cg.apps.schoolmswithjpa.studentms.entities.Student;
 import com.cg.apps.schoolmswithjpa.studentms.exceptions.InvalidIdException;
+import com.cg.apps.schoolmswithjpa.studentms.exceptions.InvalidScoreException;
 import com.cg.apps.schoolmswithjpa.studentms.exceptions.InvalidStudentNameException;
 import com.cg.apps.schoolmswithjpa.studentms.exceptions.StudentNotFoundException;
 import org.junit.jupiter.api.Assertions;
@@ -57,36 +58,16 @@ class StudentServiceImplTest {
      */
     @Test
     public void testFindBy_2(){
-        /*
-        Executable executable=new Executable(){
-            @Override
-            public void execute() throws Throwable {
-                service.findById(154);
-            }
-        };
-        */
 
         Executable executable=()->service.findById(123);
         Assertions.assertThrows(StudentNotFoundException.class,executable);
 
     }
 
-    /**
-     * scenario : when id is negative
-     * expectation: InvalidIdException is thrown
-     */
-
-    @Test
-    public void testFindById_3(){
-        Executable executable=()->service.findById(-10);
-        Assertions.assertThrows(InvalidIdException.class,executable);
-
-    }
 
 
     /**
      * scenario : student added successfully
-     * expectation: student added in the database
      */
     @Test
     public void testAdd_1(){
@@ -114,6 +95,17 @@ class StudentServiceImplTest {
         Assertions.assertThrows(InvalidStudentNameException.class,executable);
     }
 
+    /**
+     * scenario : score is negative
+     * expectation : InvalidScoreException is thrown
+     */
+
+    @Test
+    public void testAdd_3(){
+        Executable executable=()->service.addStudent("rohit",-30);
+        Assertions.assertThrows(InvalidScoreException.class,executable);
+
+    }
 
 
 }

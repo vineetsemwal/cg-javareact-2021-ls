@@ -109,8 +109,8 @@ class StudentServiceImplTest {
     }
 
     /**
-     * sceneario : name is passed empty
-     * expetation : InvalidStudentNameException is thrown
+     * scenario : name is passed empty
+     * expectation : InvalidStudentNameException is thrown
      */
     @Test
     public void testAdd_2(){

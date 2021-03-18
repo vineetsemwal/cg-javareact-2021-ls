@@ -20,27 +20,27 @@ public class StudentServiceImpl implements IStudentService {
     @Autowired
     private IStudentRepository repository;
 
+
+
+    @Override
+    public Student findById(int id) {
+      Optional<Student>optional = repository.findById(id);
+      if(!optional.isPresent()){
+          throw  new StudentNotFoundException("student doesn't exist for id="+id);
+      }
+      return optional.get();
+    }
+
+
     @Transactional
     @Override
     public Student addStudent(String name, int score) {
         validateName(name);
         validateScore(score);
-        Student student = new Student(name, score);
-        student = repository.save(student);
-        return student;
+        Student student=new Student(name, score);
+        student=repository.save(student);
+       return student;
     }
-
-    @Override
-    public Student findById(int id) {
-        validateId(id);
-        Optional<Student> optional = repository.findById(id);
-        if (!optional.isPresent()) {
-           throw new StudentNotFoundException("student not found for id="+id);
-        }
-        return optional.get();
-
-    }
-
 
     @Override
     public List<Student> findAll() {
