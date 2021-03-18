@@ -28,6 +28,7 @@ public class CalculatorUnitTest {
 		Mockito.when(adder.add(5,3)).thenReturn(8);
 		int result=calculator.add(3,5);
 	    Assertions.assertEquals(8,result);
+	    Mockito.verify(adder).add(3,5);
 	}
 
 
