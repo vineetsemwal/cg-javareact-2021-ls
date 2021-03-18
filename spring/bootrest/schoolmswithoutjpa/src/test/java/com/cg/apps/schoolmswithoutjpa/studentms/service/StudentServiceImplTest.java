@@ -3,7 +3,10 @@ package com.cg.apps.schoolmswithoutjpa.studentms.service;
 import com.cg.apps.schoolmswithoutjpa.studentms.dao.StoreHolder;
 import com.cg.apps.schoolmswithoutjpa.studentms.dao.StudentDaoImpl;
 import com.cg.apps.schoolmswithoutjpa.studentms.entities.Student;
+import com.cg.apps.schoolmswithoutjpa.studentms.exceptions.InvalidIdException;
+import com.cg.apps.schoolmswithoutjpa.studentms.exceptions.InvalidStudentNameException;
 import com.cg.apps.schoolmswithoutjpa.studentms.exceptions.StudentNotFoundException;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -35,6 +38,10 @@ class StudentServiceImplTest {
     store=storeHolder.getStudentsStore();
     }
 
+    @AfterEach
+    public void clear() {
+        store.clear();
+    }
 
     /**
      * scenario: student exist in the store
@@ -54,6 +61,7 @@ class StudentServiceImplTest {
 
     /**
      * scenario : student doesn't exist in store
+     * expectation :StudentNotFoundException is thrown
      */
     @Test
     public void testFindBy_2(){
@@ -69,6 +77,45 @@ class StudentServiceImplTest {
         Executable executable=()->service.findById(123);
         Assertions.assertThrows(StudentNotFoundException.class,executable);
 
+    }
+
+    /**
+     * scenario : when id is negative
+     * expectation: InvalidIdException is thrown
+     */
+    @Test
+    public void testFindById_3(){
+        Executable executable=()->service.findById(-10);
+        Assertions.assertThrows(InvalidIdException.class,executable);
+
+    }
+
+    /**
+     * scenario : student added successfully
+     */
+    @Test
+    public void testAdd_1(){
+        String name="raja";
+        int score=95;
+        Student result=service.addStudent(name, score);
+        Assertions.assertNotNull(result);
+        Assertions.assertEquals(1,store.size());
+        int addedId=result.getId();
+        Student stored=store.get(addedId);
+        Assertions.assertEquals(name,stored.getName());
+        Assertions.assertEquals(name,result.getName());
+        Assertions.assertEquals(score,stored.getScore());
+        Assertions.assertEquals(score,result.getScore());
+    }
+
+    /**
+     * sceneario : name is passed empty
+     * expetation : InvalidStudentNameException is thrown
+     */
+    @Test
+    public void testAdd_2(){
+        Executable executable=()->service.addStudent("",20);
+        Assertions.assertThrows(InvalidStudentNameException.class,executable);
     }
 
 
