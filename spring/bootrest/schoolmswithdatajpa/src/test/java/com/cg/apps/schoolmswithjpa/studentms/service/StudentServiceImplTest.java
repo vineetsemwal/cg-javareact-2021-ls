@@ -2,6 +2,7 @@ package com.cg.apps.schoolmswithjpa.studentms.service;
 
 import com.cg.apps.schoolmswithjpa.studentms.entities.Student;
 import com.cg.apps.schoolmswithjpa.studentms.exceptions.InvalidIdException;
+import com.cg.apps.schoolmswithjpa.studentms.exceptions.InvalidStudentNameException;
 import com.cg.apps.schoolmswithjpa.studentms.exceptions.StudentNotFoundException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -14,6 +15,8 @@ import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import javax.persistence.EntityManager;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -80,6 +83,36 @@ class StudentServiceImplTest {
 
     }
 
+
+    /**
+     * scenario : student added successfully
+     * expectation: student added in the database
+     */
+    @Test
+    public void testAdd_1(){
+        String name="raja";
+        int score=95;
+        Student result=service.addStudent(name, score);
+        Assertions.assertNotNull(result);
+        List<Student> fetched=entityManager.createQuery("from Student",Student.class).getResultList();
+        Assertions.assertEquals(1,fetched.size());
+        Student stored=fetched.get(0);
+        Assertions.assertEquals(stored.getId(),result.getId());
+        Assertions.assertEquals(name,stored.getName());
+        Assertions.assertEquals(name,result.getName());
+        Assertions.assertEquals(score,stored.getScore());
+        Assertions.assertEquals(score,result.getScore());
+    }
+
+    /**
+     * scenario : name is passed empty
+     * expectation : InvalidStudentNameException is thrown
+     */
+    @Test
+    public void testAdd_2(){
+        Executable executable=()->service.addStudent("",20);
+        Assertions.assertThrows(InvalidStudentNameException.class,executable);
+    }
 
 
 
