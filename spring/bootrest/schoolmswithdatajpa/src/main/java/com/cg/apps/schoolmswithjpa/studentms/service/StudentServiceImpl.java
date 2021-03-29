@@ -27,6 +27,7 @@ public class StudentServiceImpl implements IStudentService {
 
     @Override
     public Student findById(int id) {
+        repository.existsById(id);
       Optional<Student>optional = repository.findById(id);
       if(!optional.isPresent()){
           throw  new StudentNotFoundException("student doesn't exist for id="+id);

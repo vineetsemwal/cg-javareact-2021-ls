@@ -23,11 +23,8 @@ public class CalculatorUnitTest {
 	 * expectation : result is 8
 	 */
 	@Test
-	public void testAdd_2(){
-		Mockito.when(adder.add(3,5)).thenReturn(8);
-		Mockito.when(adder.add(5,3)).thenReturn(8);
-		int result=calculator.add(3,5);
-	    Assertions.assertEquals(8,result);
+	public void testAdd_1(){
+
 	}
 
 

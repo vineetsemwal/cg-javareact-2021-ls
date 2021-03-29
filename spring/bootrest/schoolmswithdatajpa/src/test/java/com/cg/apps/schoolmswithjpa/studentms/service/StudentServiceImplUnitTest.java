@@ -34,7 +34,7 @@ public class StudentServiceImplUnitTest {
     StudentServiceImpl service;
 
     /**
-     * success scenario
+     *scenario :student added succesfully
      */
     @Test
     public void testAdd_1() {
@@ -55,6 +55,9 @@ public class StudentServiceImplUnitTest {
 
     }
 
+    /**
+     *  scenario : name is empty
+     */
     @Test
     public void testAdd_2(){
         String name="";

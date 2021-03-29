@@ -34,9 +34,9 @@ public class StudentRestController {
     /**
      * /students/byid/2
      */
+    //@RequestMapping(value="/byid/{id}", method = RequestMethod.GET)
     @GetMapping(value = "/byid/{id}")
     public StudentDetails fetchStudent(@PathVariable("id") Integer studentId) {
-       // System.out.println("studentid in fetchstudent in StudentRestController "+studentId);
         LOG.debug("studentid in fetchstudent in StudentRestController "+studentId);
         Student student = service.findById(studentId);
         StudentDetails details=util.toDetails(student);
@@ -47,7 +47,6 @@ public class StudentRestController {
     /**
      * /students
      */
-
     @GetMapping
     public List<StudentDetails> allStudents() {
         List<Student> list = service.findAll();
@@ -60,9 +59,10 @@ public class StudentRestController {
      */
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/add")
-    public String addStudent(@RequestBody CreateStudentRequest requestData) {
+    public StudentDetails addStudent(@RequestBody CreateStudentRequest requestData) {
         Student created = service.addStudent(requestData.getName(), requestData.getScore());
-        return "created student with id=" + created.getId();
+        StudentDetails details = util.toDetails(created);
+        return details;
     }
 
     @PutMapping("/changename")
