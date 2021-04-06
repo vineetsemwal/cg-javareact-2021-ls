@@ -1,0 +1,17 @@
+a[href="exp2.html"] {
+border:1px solid #000;
+font-size:2em;
+}
+
+.outside{
+    margin: 100px;
+    padding:100px;
+    background-color:yellow;
+    height:500px;
+    width:400px;
+}
+
+.inside{
+    background-color:red;
+    padding:40px;
+}
