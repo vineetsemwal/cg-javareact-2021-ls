@@ -1,4 +1,6 @@
-
+/**
+ * function declaration in js object
+ */
 var user1 = {
     name: "arpit",
     age: 21,
@@ -17,7 +19,7 @@ var user2 = {
 }
 
 var users = [];
-users.push(user1,user2);
+users.push(user1,user2);// function to add element in array
 
 function displayUsers(users) {
     for (var i = 0; i < users.length; i++) {   

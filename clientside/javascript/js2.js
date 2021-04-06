@@ -1,4 +1,6 @@
-
+/**
+ * object example
+ */
 var user1={
     name : "arpit",
     age : 21

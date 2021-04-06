@@ -1,4 +1,6 @@
-
+/**
+ * var problem: variable declared with var is available outside the block where it is declared( in the whole function)  
+ */
 function displayNum(){
 
    if(true) {
