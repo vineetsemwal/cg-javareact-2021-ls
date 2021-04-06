@@ -4,6 +4,7 @@ function add(num1, num2){
  return total;
 }
 
-var result=add(1,2);
+var  fun=add;
+var result=fun(10,20);
 
 console.log("result="+result);
