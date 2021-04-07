@@ -13,9 +13,15 @@ class User{
         console.log(this.name+" "+this.age);
     }
 
-//
+   // get=(fieldName)=>this[fieldName];
+   // set=(fieldName,value)=>this[fieldName]=value;
+
+
+
 // arrow fucntion in class 
-// display=()=>  console.log(this.name+" "+this.age);
+ //display=()=> {    
+ // console.log(this.name+" "+this.age);
+ //};
 //
 
 }
@@ -23,4 +29,6 @@ class User{
 
 
 let user= new User("arpit", 21);
+console.log("age is "+age);
 user.display();
+

@@ -10,3 +10,5 @@ var  fun=add;
 var result=fun(10,20);
 
 console.log("result="+result);
+
+export default add;
