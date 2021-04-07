@@ -1,16 +1,20 @@
 
-function Welcome(props) {
+function Welcome({msg}) {
 
-console.log(props);
+//console.log(props);
+//let msg=props.msg;
+//let {msg}=props;
 
     return (
         <div>
-        {props.msg}
+        {msg}
         </div>
 
 
     );
 
 }
+
+
 
 export default Welcome;

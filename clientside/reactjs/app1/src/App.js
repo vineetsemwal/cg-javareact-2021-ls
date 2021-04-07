@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Welcome from './Welcome';
+import WelcomeClass from './WelcomeClass';
 
 function App() {
   let msg1="hello raja";
@@ -16,6 +17,10 @@ function App() {
 
       <Welcome msg={msg3} />  
 
+
+       <WelcomeClass />
+       <WelcomeClass />
+       
       </div>
 
   );
