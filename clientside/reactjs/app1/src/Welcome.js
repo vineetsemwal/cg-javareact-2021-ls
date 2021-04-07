@@ -1,9 +1,11 @@
 
-function Welcome() {
+function Welcome(props) {
+
+console.log(props);
 
     return (
         <div>
-         Welcome to reactjs
+        {props.msg}
         </div>
 
 

@@ -3,14 +3,19 @@ import './App.css';
 import Welcome from './Welcome';
 
 function App() {
-  let msg="hello learners";
+  let msg1="hello raja";
+  let msg2="hello mohan";
+  let msg3="hello rohit";
 
   return (
     <div> 
-        {msg} 
+           
+      <Welcome msg={msg1} />  
       
-      <Welcome />
-      
+      <Welcome msg={msg2} />  
+
+      <Welcome msg={msg3} />  
+
       </div>
 
   );
