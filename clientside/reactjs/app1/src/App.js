@@ -7,6 +7,8 @@ function App() {
   let msg1="hello raja";
   let msg2="hello mohan";
   let msg3="hello rohit";
+  let msg4="hello ajay";
+  let msg5="hello yash";
 
   return (
     <div> 
@@ -18,8 +20,8 @@ function App() {
       <Welcome msg={msg3} />  
 
 
-       <WelcomeClass />
-       <WelcomeClass />
+       <WelcomeClass msg={msg4} />
+       <WelcomeClass msg={msg5}/>
        
       </div>
 

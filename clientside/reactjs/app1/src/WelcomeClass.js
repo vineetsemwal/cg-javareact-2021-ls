@@ -3,11 +3,12 @@ import { Component } from 'react';
 
 class WelcomeClass extends Component {
 
-
+ 
     render() {
+        let {msg}=this.props;// let msg=this.pops.msg;
         return (
             <div>
-Welcome to my class Component
+            {msg}
             </div>
         );
     }
