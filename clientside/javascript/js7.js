@@ -1,10 +1,10 @@
 /**
- * let
+ * let is block scoped
  */
 function displayNum(){
-    let num=20;
+  
     if(true) {
-     
+        let num=20;
 
      }
  

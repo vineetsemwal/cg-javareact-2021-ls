@@ -15,7 +15,7 @@ console.log("text2="+text2);
 let result=20;
 
 let resultText1="result is "+result+" bye";
-let resultText2=`result is ${result} bye`;
+let resultText2=`result is ${result+5} bye`;
 
 console.log("resulttext1="+resultText1);
 
