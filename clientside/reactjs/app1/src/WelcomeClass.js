@@ -1,7 +1,6 @@
 import { Component } from 'react';
 //import React from 'react';
 
-// export {Component}
 class WelcomeClass extends Component {
 
 
