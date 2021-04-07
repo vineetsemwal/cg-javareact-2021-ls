@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Welcome from './Welcome';
 import WelcomeClass from './WelcomeClass';
+import DisplayUser from './DisplayUser';
 
 function App() {
   let msg1="hello raja";
@@ -9,20 +10,13 @@ function App() {
   let msg3="hello rohit";
   let msg4="hello ajay";
   let msg5="hello yash";
+  let user = { id: 1, name: 'mohan', age: 21 };
+
 
   return (
     <div> 
-           
-      <Welcome msg={msg1} />  
-      
-      <Welcome msg={msg2} />  
+     <DisplayUser user={user} />
 
-      <Welcome msg={msg3} />  
-
-
-       <WelcomeClass msg={msg4} />
-       <WelcomeClass msg={msg5}/>
-       
       </div>
 
   );

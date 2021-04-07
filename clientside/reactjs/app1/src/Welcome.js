@@ -1,5 +1,5 @@
 
-function Welcome({msg}) {
+function Welcome({msg,children}) {
 
 //console.log(props);
 //let msg=props.msg;
@@ -8,6 +8,9 @@ function Welcome({msg}) {
     return (
         <div>
         {msg}
+        <br/>
+        {children}
+        
         </div>
 
 
