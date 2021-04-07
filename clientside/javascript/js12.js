@@ -11,6 +11,11 @@ let age1=user.age;
 console.log(id1+" "+name1 +" "+age1);
 
 
-let {id:id1,name:name2,age:age2 }=user;// object destructuring
+let {id:id2,name:name2,age:age2 }=user;// object destructuring
 
-console.log(id1 +" "+name2 +" "+age2);
+console.log(id2 +" "+name2 +" "+age2);
+
+
+let {id,name,age}=user;
+
+console.log(id+" "+name +" "+age);
