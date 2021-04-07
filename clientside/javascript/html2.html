@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <script type="text/javascript">
+    function greet( nameElementId,placeElementId){
+        console.log("inside greet fun arg1="+nameElementId+" arg2="+placeElementId);
+
+      let nameElement=document.getElementById(nameElementId);  
+      let inputValue=nameElement.value;
+      let desiredText=`<h3>hello ${inputValue} </h3>`;
+
+      let placeElement=document.getElementById(placeElementId);
+      placeElement.innerHTML = desiredText; 
+
+    }
+    
+    </script>
+
+</head>
+
+<body>
+  <form>
+ <label>Enter Username</label>
+    <input id="username" name="username" type="text" onchange="greet('username','msgcon')">
+
+  </form>
+
+  <div id="msgcon" style="margin: 50px;">
+
+
+  </div>
+
+</body>
+
+</html>
