@@ -8,9 +8,7 @@ return (
 
 <ul>
 
-
-{users.map( (user) =>  <li> <DisplayUser user={user} />   </li>  )}
-
+{users.map( (user, index) =>  <li key={user.id}> <DisplayUser user={user} />   </li>  )}
 
 </ul>
 
