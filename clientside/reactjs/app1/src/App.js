@@ -5,6 +5,7 @@ import WelcomeClass from './WelcomeClass';
 import DisplayUser from './DisplayUser';
 import DisplayUsers from './DisplayUsers';
 import ClickCounter from './ClickCounter';
+import AddUser from './AddUser';
 
 function App() {
   let user1 = { id: 1, name: 'mohan', age: 21 };
@@ -17,7 +18,9 @@ function App() {
     <div>
       {/* <DisplayUsers users={users} />*/}
 
-      <ClickCounter/>
+     { /*<ClickCounter/>*/ }
+
+     <AddUser />
 
     </div>
 
