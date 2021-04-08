@@ -10,6 +10,7 @@ import AddUser2 from './AddUser2';
 import AddUser3 from './AddUser3';
 import AddUser4 from './AddUser4';
 import AddUser5 from './AddUser5';
+import UsersTabular from './UsersTabular';
 
 function App() {
   let user1 = { id: 1, name: 'mohan', age: 21 };
@@ -22,9 +23,12 @@ function App() {
     <div>
       {/* <DisplayUsers users={users} />*/}
 
-     { /*<ClickCounter/>*/ }
+      { /*<ClickCounter/>*/}
 
-      <AddUser5/>
+      {/*<AddUser5/>*/}
+
+      <UsersTabular users={users} />
+
 
     </div>
 
