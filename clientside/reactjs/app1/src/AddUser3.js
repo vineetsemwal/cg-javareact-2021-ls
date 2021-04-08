@@ -11,7 +11,7 @@ class AddUser3 extends Component {
     let field = event.target;
     let fieldName = field.name;
     let fieldVal = field.value;
-    this.setState({ ...this.state, [fieldName]: fieldVal });
+    this.setState({ ...this.state, [fieldName]: fieldVal  });
   }
 
   render() {
