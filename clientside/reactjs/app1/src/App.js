@@ -3,19 +3,18 @@ import './App.css';
 import Welcome from './Welcome';
 import WelcomeClass from './WelcomeClass';
 import DisplayUser from './DisplayUser';
+import DisplayUsers from './DisplayUsers';
 
-function App() {
-  let msg1="hello raja";
-  let msg2="hello mohan";
-  let msg3="hello rohit";
-  let msg4="hello ajay";
-  let msg5="hello yash";
-  let user = { id: 1, name: 'mohan', age: 21 };
+function App() {  
+  let user1 = { id: 1, name: 'mohan', age: 21 };
+  let user2 = { id: 2, name: 'ajay', age: 21 };
+  let user3 = { id: 3, name: 'rohit', age: 21 };
 
+  let users=[user1, user2, user3];
 
   return (
     <div> 
-     <DisplayUser user={user} />
+    <DisplayUsers users={users} />
 
       </div>
 

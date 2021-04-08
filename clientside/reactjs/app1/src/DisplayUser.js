@@ -1,12 +1,12 @@
 function DisplayUser({user}) {
 
+return (
+    <span>
+id is {user.id} name is {user.name} age is {user.age}
 
-    return (
-        <div>
-        name is {user.name}  id is {user.id} age is {user.age}
-        </div>
-
-    );
+    </span>
+    
+    )
 
 }
 
