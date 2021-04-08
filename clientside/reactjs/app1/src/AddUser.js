@@ -5,7 +5,7 @@ class AddUser extends Component {
     constructor(props) {
         super(props);
         this.state = { firstname: '', lastname: '', age: -1 };
-     //   this.setFirstName = this.setFirstName.bind(this);
+       this.setFirstName = this.setFirstName.bind(this);
         this.setLastName = this.setLastName.bind(this);
         this.setAge = this.setAge.bind(this);
     }
