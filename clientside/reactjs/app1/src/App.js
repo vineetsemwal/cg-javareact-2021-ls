@@ -5,7 +5,8 @@ import WelcomeClass from './WelcomeClass';
 import DisplayUser from './DisplayUser';
 import DisplayUsers from './DisplayUsers';
 import ClickCounter from './ClickCounter';
-import AddUser from './AddUser';
+import AddUser1 from './AddUser1';
+import AddUser2 from './AddUser2';
 
 function App() {
   let user1 = { id: 1, name: 'mohan', age: 21 };
@@ -20,7 +21,7 @@ function App() {
 
      { /*<ClickCounter/>*/ }
 
-     <AddUser />
+      <AddUser2 />
 
     </div>
 
