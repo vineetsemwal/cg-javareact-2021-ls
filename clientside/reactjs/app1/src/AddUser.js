@@ -5,10 +5,7 @@ class AddUser extends Component {
     constructor(props) {
         super(props);
         this.state = { firstname: '', lastname: '', age: -1 };
-       this.setFirstName = this.setFirstName.bind(this);
-        this.setLastName = this.setLastName.bind(this);
-        this.setAge = this.setAge.bind(this);
-    }
+      }
 
     setFirstName(event) {
         let firstnameVal = event.target.value;
@@ -38,7 +35,7 @@ class AddUser extends Component {
                     <div>
                         <label>Enter firstname</label>
 
-                        <input name="firstname" type="text" onChange={this.setFirstName} />
+                        <input name="firstname" type="text" onChange={ (event)=>this.setFirstName(event)} />
 
                     </div>
 
@@ -46,7 +43,7 @@ class AddUser extends Component {
                     <div>
                         <label>Enter lastname</label>
 
-                        <input name="lastname" type="text"  onChange = {this.setLastName} />
+                        <input name="lastname" type="text"  onChange = {(event)=>this.setLastName(event)} />
 
                     </div>
 
@@ -54,7 +51,7 @@ class AddUser extends Component {
                     <div>
                         <label>Enter age</label>
 
-                        <input name="age" type="number" onChange={this.setAge} />
+                        <input name="age" type="number" onChange={(event)=>this.setAge(event)} />
 
                     </div>
 
