@@ -19,6 +19,7 @@ import SimplePureComponent from './SimplePureComponent';
 import DisplayEven from './DisplayEven';
 import ErrorBoundary from './ErrorBoundary';
 import ClickCounterFun from './ClickCounterFun';
+import FormHandlingFun from './FormHandlingFun';
 
 function App() {
   let user1 = { id: 1, name: 'mohan', age: 21 };
@@ -48,12 +49,15 @@ function App() {
 
       {/*<SimplePureComponent />*/}
 
-      <ErrorBoundary>
-        <DisplayEven num={2} />
-      </ErrorBoundary>
     
+    
+<FormHandlingFun />
 
-<ClickCounterFun />
+
+
+   {/*<ClickCounterFun />  */}
+
+
 
 
     </div>
