@@ -16,6 +16,8 @@ import RefExample from './RefExample';
 import AddEmployee from './AddEmployee';
 import DisplayEmployees from './DisplayEmployees';
 import SimplePureComponent from './SimplePureComponent';
+import DisplayEven from './DisplayEven';
+import ErrorBoundary from './ErrorBoundary';
 
 function App() {
   let user1 = { id: 1, name: 'mohan', age: 21 };
@@ -43,7 +45,22 @@ function App() {
 
       {/* <DisplayEmployees /> */}
 
-      <SimplePureComponent />
+      {/*<SimplePureComponent />*/}
+
+      <ErrorBoundary>
+        <DisplayEven num={2} />
+      </ErrorBoundary>
+      <ErrorBoundary>
+        <DisplayEven num={12} />
+      </ErrorBoundary>
+
+      <ErrorBoundary>
+        <DisplayEven num={15} />
+      </ErrorBoundary>
+
+      <ErrorBoundary>
+        <DisplayEven num={16} />
+      </ErrorBoundary>
 
     </div>
 
