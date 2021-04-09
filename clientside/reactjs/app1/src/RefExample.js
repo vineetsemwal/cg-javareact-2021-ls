@@ -17,7 +17,7 @@ class RefExample extends Component {
       //this.setState(newStateObj);
       
       let stateFun=(prevState) =>{
-        const newStateObj={...this.state,formStatus:'Form successfully submitted'};     
+        const newStateObj={...prevState,formStatus:'Form successfully submitted'};     
         return newStateObj;
       };
 
