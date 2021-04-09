@@ -1,5 +1,14 @@
 import {Component} from 'react';
-
+/**
+ * very useful in the production
+ * 
+ * default react behavior is if there is an err in the component then whole page stops functioning
+ * instead of that we can use error boundaries component like this one
+ * our components can be child of error boundaries components in that case 
+ *  if there is err in component now err boundary component will only display message
+ *  else our component will be displayed
+ * 
+ */
 class ErrorBoundary extends Component {
 
 
