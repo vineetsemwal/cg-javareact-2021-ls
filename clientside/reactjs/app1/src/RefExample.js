@@ -13,8 +13,14 @@ class RefExample extends Component {
   submitHandler(event){
       console.log("inside submit handler");
       event.preventDefault();
-      this.setState({...this.state,formStatus:'Form successfully submitted'});
-      
+      const newStateObj={...this.state,formStatus:'Form successfully submitted'};
+      this.setState(newStateObj);
+      /*
+      this.setState((prevState) =>{
+        const newStateObj={...this.state,formStatus:'Form successfully submitted'};     
+        return newStateObj;
+      });
+      */
 
   }
 
