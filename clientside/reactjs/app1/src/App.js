@@ -15,6 +15,7 @@ import DisplayFruits from './DisplayFruits';
 import RefExample from './RefExample';
 import AddEmployee from './AddEmployee';
 import DisplayEmployees from './DisplayEmployees';
+import SimplePureComponent from './SimplePureComponent';
 
 function App() {
   let user1 = { id: 1, name: 'mohan', age: 21 };
@@ -31,17 +32,18 @@ function App() {
 
       {/*<AddUser5/>*/}
 
-    { /*  <UsersTabular users={users}  /> */ }
+      { /*  <UsersTabular users={users}  /> */}
 
 
-    {/*<DisplayFruits/>*/}
+      {/*<DisplayFruits/>*/}
 
 
-   { /*<RefExample /> */ }
+      { /*<RefExample /> */}
 
 
-      <DisplayEmployees />
+      {/* <DisplayEmployees /> */}
 
+      <SimplePureComponent />
 
     </div>
 
