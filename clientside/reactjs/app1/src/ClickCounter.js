@@ -12,7 +12,12 @@ class ClickCounter extends Component {
 
     increment() {
   
-      this.setState({counter:this.state.counter+1}); //state update
+     // this.setState({counter:this.state.counter+1}); //state update
+      this.setState(previousState=>{
+       let obj={  counter: previousState.counter+1       }   ;
+       return obj;
+
+      } )
     }
 
     render() {

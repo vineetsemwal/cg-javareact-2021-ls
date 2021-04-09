@@ -13,6 +13,8 @@ import AddUser5 from './AddUser5';
 import UsersTabular from './UsersTabular';
 import DisplayFruits from './DisplayFruits';
 import RefExample from './RefExample';
+import AddEmployee from './AddEmployee';
+import DisplayEmployees from './DisplayEmployees';
 
 function App() {
   let user1 = { id: 1, name: 'mohan', age: 21 };
@@ -25,7 +27,7 @@ function App() {
     <div>
       {/* <DisplayUsers users={users} />*/}
 
-      { /*<ClickCounter/>*/}
+      {/* <ClickCounter/> */}
 
       {/*<AddUser5/>*/}
 
@@ -35,7 +37,11 @@ function App() {
     {/*<DisplayFruits/>*/}
 
 
-   <RefExample />
+   { /*<RefExample /> */ }
+
+
+      <DisplayEmployees />
+
 
     </div>
 
