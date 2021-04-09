@@ -21,7 +21,7 @@ class AddFruit extends Component {
 
             <form>
 
-             <input type="text" name="fruit" ref={this.fruitRef} />
+             <input type="text" name="fruit" ref={this.fruitRef}  />
 
              <button onClick={(event)=>this.buttonClicked(event) } > Add Fruit</button>
 

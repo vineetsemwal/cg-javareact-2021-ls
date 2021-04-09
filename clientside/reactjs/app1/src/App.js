@@ -12,6 +12,7 @@ import AddUser4 from './AddUser4';
 import AddUser5 from './AddUser5';
 import UsersTabular from './UsersTabular';
 import DisplayFruits from './DisplayFruits';
+import RefExample from './RefExample';
 
 function App() {
   let user1 = { id: 1, name: 'mohan', age: 21 };
@@ -31,8 +32,10 @@ function App() {
     { /*  <UsersTabular users={users}  /> */ }
 
 
-    <DisplayFruits/>
+    {/*<DisplayFruits/>*/}
 
+
+   <RefExample />
 
     </div>
 

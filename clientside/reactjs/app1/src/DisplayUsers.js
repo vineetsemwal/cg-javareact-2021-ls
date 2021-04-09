@@ -1,5 +1,30 @@
 import DisplayUser from "./DisplayUser";
 
+/*
+Parent
+
+return (
+
+    <div>
+
+    <Child />
+
+    </div>
+
+);
+
+React.createElement(
+'h1', {className: 'greeting'},
+
+React.createElement("<div>", {}, "child")
+
+);
+
+
+
+*/
+
+
 function DisplayUsers({users}){
 
 return (
@@ -19,3 +44,4 @@ return (
 }
 
 export default DisplayUsers
+
