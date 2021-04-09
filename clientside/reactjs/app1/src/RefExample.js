@@ -6,22 +6,14 @@ class RefExample extends Component {
 
   constructor(props){
       super(props);
-      const initialStateObj={fullName:'', age:-1};
+      const initialStateObj={fullName:'', age:-1, formStatus:''};
       this.state=initialStateObj;
   }
 
   submitHandler(event){
       console.log("inside submit handler");
       event.preventDefault();
-    /*
-      const fullNameField=this.fullNameRef.current;
-      const ageNameField=this.ageRef.current;
-      const fullNameVal=fullNameField.value;
-      const ageVal=ageNameField.value;
- 
-
-      this.setState({fullName:fullNameVal, age:ageVal});
-*/
+      this.setState({...this.state,formStatus:'Form successfully submitted'});
       
 
   }
@@ -29,7 +21,7 @@ class RefExample extends Component {
   setFullName(){
     const fullNameField=this.fullNameRef.current;
     const fullNameVal=fullNameField.value;   
-    const newStateObj=  {fullName:fullNameVal , age :this.state.age};
+    const newStateObj=  {...this.state, fullName:fullNameVal};
    this.setState(newStateObj);
 
   }
@@ -37,7 +29,7 @@ class RefExample extends Component {
   setAge(){
     const ageNameField=this.ageRef.current;
     const ageVal=ageNameField.value;    
-    const newStateObj={fullName:this.state.fullName, age :ageVal};
+    const newStateObj={...this.state, age :ageVal};
     this.setState(newStateObj);
 
   }
@@ -64,7 +56,10 @@ class RefExample extends Component {
 
       </form>
 
-      <h3>User Submitted Details</h3>
+      <h2>User Submitted Details</h2>
+
+       <h3>{this.state.formStatus}</h3>
+      
        Fullname is {this.state.fullName} age is {this.state.age}
 
     </div>
