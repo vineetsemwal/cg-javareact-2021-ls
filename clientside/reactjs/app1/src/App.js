@@ -18,6 +18,7 @@ import DisplayEmployees from './DisplayEmployees';
 import SimplePureComponent from './SimplePureComponent';
 import DisplayEven from './DisplayEven';
 import ErrorBoundary from './ErrorBoundary';
+import ClickCounterFun from './ClickCounterFun';
 
 function App() {
   let user1 = { id: 1, name: 'mohan', age: 21 };
@@ -50,17 +51,10 @@ function App() {
       <ErrorBoundary>
         <DisplayEven num={2} />
       </ErrorBoundary>
-      <ErrorBoundary>
-        <DisplayEven num={12} />
-      </ErrorBoundary>
+    
 
-      <ErrorBoundary>
-        <DisplayEven num={15} />
-      </ErrorBoundary>
+<ClickCounterFun />
 
-      <ErrorBoundary>
-        <DisplayEven num={16} />
-      </ErrorBoundary>
 
     </div>
 
