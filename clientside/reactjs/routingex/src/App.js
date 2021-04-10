@@ -3,7 +3,7 @@ import './App.css';
 import Home from './Home';
 import About from './About';
 import Contact from './Contact';
-import NavLinks from './NavLinks';
+import NavLinks from './NavLinks'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 
@@ -17,14 +17,12 @@ function App() {
         <NavLinks />
 
 
-
         <Switch>
 
           <Route path="/" exact component={Home} />
 
-
-          <Route path="/about" exact component={About} />
-
+          <Route path="/about" exact component={About} />         
+      
 
           <Route path="/contact" exact component={Contact} />
         </Switch>
