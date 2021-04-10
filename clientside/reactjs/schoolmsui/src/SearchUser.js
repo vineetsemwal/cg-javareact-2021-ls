@@ -25,8 +25,8 @@ class SearchUser extends Component {
 
         })
             .catch((err) => {
-                console.log("inside err callback");
-                this.setState({...this.state,error:"request was not successful"});
+                console.log("inside err callback",);
+                this.setState({...this.state,error:err.response.data});
             }
 
             );
