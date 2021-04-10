@@ -1,6 +1,6 @@
 import './style1.css'
 
-export default function StyleEx() {
+export default function StyleEx1() {
 
 
     return (

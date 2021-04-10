@@ -20,8 +20,9 @@ import DisplayEven from './DisplayEven';
 import ErrorBoundary from './ErrorBoundary';
 import ClickCounterFun from './ClickCounterFun';
 import FormHandlingFun from './FormHandlingFun';
-import StyleEx from './StyleEx';
+import StyleEx1 from './StyleEx1';
 import DisplayNumber from './DisplayNumber';
+import StyleEx2 from './StyleEx2';
 
 function App() {
   let user1 = { id: 1, name: 'mohan', age: 21 };
@@ -43,31 +44,9 @@ function App() {
 
       {/*<DisplayFruits/>*/}
 
+       <StyleEx2 />   
+  
 
-      { /*<RefExample /> */}
-
-
-      {/* <DisplayEmployees /> */}
-
-      {/*<SimplePureComponent />*/}
-
-    
-    
-{/*<FormHandlingFun />*/}
-
-
-
-   {/*<ClickCounterFun />  */}
-
-
-   {/* <StyleEx /> */}
-
-
-   <DisplayNumber num={20} />  
-
-   <DisplayNumber num={10} />  
-
-   <DisplayNumber num={7} />  
 
 
 
