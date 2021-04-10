@@ -8,8 +8,8 @@ export default function StyleEx2() {
         <div>
 
 
-            <div className={`${style1.box}  ${style1.boxfont} `}>
-                Our box 1, using 2 css class
+            <div className={style1.box+" " +style1.boxfont}>
+                Our box 1, using 2
             </div>
 
 
