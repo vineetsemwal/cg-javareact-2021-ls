@@ -9,13 +9,13 @@ export default function StyleEx2() {
 
 
             <div className={style1.box+" " +style1.boxfont}>
-                Our box 1, using 2
+                Our box 1, using 2 css classes from style1
             </div>
 
 
 
-            <div className={style2.box}>
-                Our box 2, using 1 css class
+            <div className={style2.box+" "+style1.boxfont}>
+                Our box 2, using 2 css class , one from style 1 , one from style2
             </div>
 
 
