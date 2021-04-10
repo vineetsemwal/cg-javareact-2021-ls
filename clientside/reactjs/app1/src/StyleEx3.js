@@ -13,8 +13,7 @@ export default function StyleEx3() {
     
             </div>
     
-        );
-    
+        );    
     
     
 
