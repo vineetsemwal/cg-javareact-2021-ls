@@ -23,6 +23,7 @@ import FormHandlingFun from './FormHandlingFun';
 import StyleEx1 from './StyleEx1';
 import DisplayNumber from './DisplayNumber';
 import StyleEx2 from './StyleEx2';
+import StyleEx3 from './StyleEx3';
 
 function App() {
   let user1 = { id: 1, name: 'mohan', age: 21 };
@@ -44,7 +45,7 @@ function App() {
 
       {/*<DisplayFruits/>*/}
 
-       <StyleEx2 />   
+       <StyleEx3 />   
   
 
 
