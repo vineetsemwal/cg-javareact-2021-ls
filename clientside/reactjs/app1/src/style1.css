@@ -1,0 +1,21 @@
+.box {
+  background-color: yellow;
+  margin: 50px;
+  padding :50px;
+
+}
+
+.boxfont{
+font-size:  2em;
+
+}
+
+.even{
+    background-color:green;
+    padding: 20px
+}
+
+.odd{
+ background-color : red;
+ padding:20px;
+}

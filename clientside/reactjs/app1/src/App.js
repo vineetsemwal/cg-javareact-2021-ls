@@ -20,6 +20,8 @@ import DisplayEven from './DisplayEven';
 import ErrorBoundary from './ErrorBoundary';
 import ClickCounterFun from './ClickCounterFun';
 import FormHandlingFun from './FormHandlingFun';
+import StyleEx from './StyleEx';
+import DisplayNumber from './DisplayNumber';
 
 function App() {
   let user1 = { id: 1, name: 'mohan', age: 21 };
@@ -51,12 +53,21 @@ function App() {
 
     
     
-<FormHandlingFun />
+{/*<FormHandlingFun />*/}
 
 
 
    {/*<ClickCounterFun />  */}
 
+
+   {/* <StyleEx /> */}
+
+
+   <DisplayNumber num={20} />  
+
+   <DisplayNumber num={10} />  
+
+   <DisplayNumber num={7} />  
 
 
 
