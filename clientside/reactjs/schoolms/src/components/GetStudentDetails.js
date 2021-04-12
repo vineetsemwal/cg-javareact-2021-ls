@@ -20,19 +20,21 @@ export default class GetStudentDetails extends Component {
         event.preventDefault();
         console.log("about to create request",this.state);   
         const promise =fetchStudent(this.state.id); 
-        promise.then((response)=>{
+        const successFun=(response)=>{
             const student=response.data;
             this.setState({...this.state,student:student ,errMsg:undefined});
             console.log("student fetched", this.state.student );
        
-        })
-        .catch(
-           (error)=>{
-               console.log("there was error",error);
-               this.setState({...this.state,student:undefined,errMsg:error.response.data});
-       
-           }
-        );
+        };
+        const errFun= (error)=>{
+            console.log("there was error",error);
+            this.setState({...this.state,student:undefined,errMsg:error.response.data});
+    
+        };
+
+
+        promise.then(successFun)
+        .catch(errFun );
     }
 
     setIdHandler() {
