@@ -1,6 +1,6 @@
 package com.cg.apps.customermsapp.customerms.dto;
 
-public class CreateStudentRequest {
+public class CreateCustomerRequest {
     private String name;
     private int age;
     private String address;

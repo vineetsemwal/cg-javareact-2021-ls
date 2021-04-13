@@ -1,8 +1,8 @@
 package com.cg.apps.customermsapp.customerms.controllers;
 
 import com.cg.apps.customermsapp.customerms.dto.ChangeNameRequest;
-import com.cg.apps.customermsapp.customerms.dto.CreateStudentRequest;
-import com.cg.apps.customermsapp.customerms.dto.DeleteStudentRequest;
+import com.cg.apps.customermsapp.customerms.dto.CreateCustomerRequest;
+import com.cg.apps.customermsapp.customerms.dto.DeleteCustomerRequest;
 import com.cg.apps.customermsapp.customerms.dto.CustomerDetails;
 import com.cg.apps.customermsapp.customerms.entities.Customer;
 import com.cg.apps.customermsapp.customerms.service.ICustomerService;
@@ -56,7 +56,7 @@ public class CustomerRestController {
      */
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/add")
-    public CustomerDetails addCustomer(@RequestBody CreateStudentRequest requestData) {
+    public CustomerDetails addCustomer(@RequestBody CreateCustomerRequest requestData) {
         Customer created = service.addStudent(requestData.getName(), requestData.getAge(), requestData.getAddress());
         CustomerDetails details = util.toDetails(created);
         return details;
@@ -70,7 +70,7 @@ public class CustomerRestController {
     }
 
     @DeleteMapping("/delete")
-    public String delete(@RequestBody DeleteStudentRequest requestData){
+    public String delete(@RequestBody DeleteCustomerRequest requestData){
         service.deleteById(requestData.getId());
         return "customer deleted for id="+requestData.getId();
     }

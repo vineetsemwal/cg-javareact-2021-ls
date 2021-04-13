@@ -1,6 +1,6 @@
 package com.cg.apps.customermsapp.customerms.dto;
 
-public class DeleteStudentRequest {
+public class DeleteCustomerRequest {
     private int id;
 
     public int getId() {
