@@ -11,21 +11,34 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 function App() {
   return (
     <div>
+
+
       <Router>
-
-
         <NavLinks />
 
+        <div className="container" style={ {marginTop:'50px'}}>
 
-        <Switch>
+          <div className="row">
 
-          <Route path="/" exact component={Home} />
+            <div className="col-md-9">
 
-          <Route path="/about" exact component={About} />         
-      
+              <Switch>
 
-          <Route path="/contact" exact component={Contact} />
-        </Switch>
+                <Route path="/" exact component={Home} />
+
+                <Route path="/about" exact component={About} />
+
+
+                <Route path="/contact" exact component={Contact} />
+              </Switch>
+            </div>
+
+            <div className="col-md-3">
+
+              <h3>Ads here</h3>
+            </div>
+          </div>
+        </div>
 
       </Router>
 
