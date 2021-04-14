@@ -12,6 +12,7 @@ function fetchCustomer(id) {
 function addCustomer(data) {
     const url = baseUrl + "/customers/add";
     let requestData = {name:data.name, age:data.age, address:data.address };
+    console.log("inside addcustomer service, request data",requestData);
     const promise = axios.post(url, requestData);
     return promise;
 }
