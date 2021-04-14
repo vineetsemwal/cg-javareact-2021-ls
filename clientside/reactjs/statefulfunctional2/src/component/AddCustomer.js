@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import DisplayCustomerDetails from "./DisplayCustomerDetails";
 import commonStyle from "./commonStyle.module.css";
 import { addCustomer } from "../service/CustomerService";
+import validationMessage from '../validationMessage';
 
 export default function AddCustomer() {
   /*
@@ -69,7 +70,7 @@ export default function AddCustomer() {
       let validations = prevState.validations;
       let msg = undefined;
       if (name.length < 2) {
-        msg = "name should be atleast 2 letters long";
+        msg = validationMessage.nameSmallthanLengthTwo;
       }
       const newValidations = { ...validations, name: msg };
       const newState = { ...prevState, validations: newValidations };
@@ -85,7 +86,10 @@ export default function AddCustomer() {
       let validations = prevState.validations;
       let msg = undefined;
       if (age < 0) {
-        msg = "age can't be smaller than zero";
+        msg = validationMessage.ageSmallThanZero;
+      }
+      if(age>120){
+          msg=validationMessage.ageGreaterThan120;
       }
       let newValidations = { ...validations, age: msg };
       const newState = { ...prevState, validations: newValidations };
