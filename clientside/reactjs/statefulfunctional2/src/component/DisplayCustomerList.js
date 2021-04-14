@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchAll } from "../service/CustomerService";
 import DisplayCustomerDetails from "./DisplayCustomerDetails";
 import commonStyle from './commonStyle.module.css';
+import { Link } from 'react-router-dom';
 
 export default function DisplayCustomerList({ customers }) {
 
@@ -14,7 +15,10 @@ export default function DisplayCustomerList({ customers }) {
                 {
                     customers.map((customer) => <li key={customer.id}>
 
-                        <DisplayCustomerDetails customer={customer} />
+                       <Link to={`/customerdetails/${customer.id}`} >
+                       <span>{customer.id} {customer.name} </span>
+                       
+                       </Link>
 
                     </li>)
                 }
