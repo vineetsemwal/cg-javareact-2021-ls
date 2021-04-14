@@ -29,7 +29,7 @@ export default function GetCustomerDetails() {
             setNewState(newState);
         };
          const errFun=(error)=>{
-           const newState={...currentState, errMsg:error.response.data};
+           const newState={...currentState, errMsg:error.message};
             setNewState(newState);
          };
 

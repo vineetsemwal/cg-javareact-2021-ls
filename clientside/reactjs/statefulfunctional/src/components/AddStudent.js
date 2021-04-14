@@ -43,7 +43,7 @@ export default function AddStudent() {
    }
    const errFun=(error)=>{
        console.log("isnide error");
-       const newState={...state,errMsg:error.response.data};
+       const newState={...state,errMsg:error.message};
        setFormState(newState);
    }
 

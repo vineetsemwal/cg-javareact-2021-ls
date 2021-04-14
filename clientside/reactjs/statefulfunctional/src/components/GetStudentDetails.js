@@ -34,7 +34,7 @@ export default function GetStudentDetails(){
        }
        const errFun=(error)=>{
            console.log("inside errorfun");
-           setFormState({...state, errMsg:error.response.data});
+           setFormState({...state, errMsg:error.message});
        }
        promise.then(successFun).catch(errFun);
     }

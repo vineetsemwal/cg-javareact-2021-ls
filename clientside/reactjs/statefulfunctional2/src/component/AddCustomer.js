@@ -35,7 +35,7 @@ export default function AddCustomer() {
             response=>setNewState({...currentState, customer:response.data})
             )
         .catch(
-            error => setNewState( {...currentState,errMsg:error.response.data}) 
+            error => setNewState( {...currentState,errMsg:error.message}) 
             );
      
     }
