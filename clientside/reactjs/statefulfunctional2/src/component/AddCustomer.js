@@ -46,55 +46,54 @@ export default function AddCustomer() {
   const setFieldState = (ref) => {
     const fieldName = ref.current.name;
     const fieldValue = ref.current.value;
+    let validationMsg;
     if (ref === ageRef) {
-      validateAge(fieldValue);
+      validationMsg = validateAge(fieldValue);
     }
 
     if (ref === nameRef) {
-      validateName(fieldValue);
+      validationMsg = validateName(fieldValue);
     }
 
-    setNewState((prevState) => {
-      const newState = {
-        ...prevState,
-        [fieldName]: fieldValue,
-        customer: undefined,
-        errMsg: undefined,
-      };
-      return newState;
-    });
+    const newValidations = { ...currentState.validations, [fieldName]: validationMsg };
+    const newState = {
+      ...currentState,
+      [fieldName]: fieldValue,
+      customer: undefined,
+      errMsg: undefined,
+      validations: newValidations
+    };
+
+    setNewState(newState);
+   
   };
 
+
+/**
+ *  validating name is atleast 2 letters long
+ */
   const validateName = (name) => {
-    setNewState((prevState) => {
-      let validations = prevState.validations;
-      let msg = undefined;
-      if (name.length < 2) {
-        msg = validationMessage.nameSmallthanLengthTwo;
-      }
-      const newValidations = { ...validations, name: msg };
-      const newState = { ...prevState, validations: newValidations };
-      return newState;
-    });
-  };
+    if (name.length < 2) {
+      return validationMessage.nameSmallthanLengthTwo;
+    }
+    return undefined;
+  }
+
+
 
   /**
    * validating age is +ve
    */
   const validateAge = (age) => {
-    setNewState((prevState) => {
-      let validations = prevState.validations;
-      let msg = undefined;
-      if (age < 0) {
-        msg = validationMessage.ageSmallThanZero;
-      }
-      if(age>120){
-          msg=validationMessage.ageGreaterThan120;
-      }
-      let newValidations = { ...validations, age: msg };
-      const newState = { ...prevState, validations: newValidations };
-      return newState;
-    });
+    if (age < 0) {
+      return validationMessage.ageSmallThanZero;
+    }
+
+    if (age > 120) {
+      return validationMessage.ageGreaterThan120;
+    }
+
+    return undefined;
   };
 
   return (
