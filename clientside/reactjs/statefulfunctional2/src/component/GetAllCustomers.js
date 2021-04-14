@@ -6,24 +6,24 @@ import DisplayCustomerList from "./DisplayCustomerList";
 
 export default function GetAllCustomers() {
 
-/*
-    const c1={id:1, name:'shivender',age:21, address:'chennai'};
-    const c2={id:2, name:'raja',age:22, address:'chennai'};
-
-     const customers=[c1, c2];      
-
-*/
-    const [currentState, setNewState] = useState({ customers: undefined, errMsg: undefined});
+    /*
+        const c1={id:1, name:'shivender',age:21, address:'chennai'};
+        const c2={id:2, name:'raja',age:22, address:'chennai'};
+    
+         const customers=[c1, c2];      
+    
+    */
+    const [currentState, setNewState] = useState({ customers: undefined, errMsg: undefined });
 
     const fetchAllCustomers = () => {
         console.log("inside use state function")
         const promise = fetchAll();
         promise.then(
-            response =>setNewState({customers:response.data, errMsg:undefined})
-            ).
-        catch(
-            error=>setNewState({customers:undefined, errMsg:error.message})            
-        )
+            response => setNewState({ customers: response.data, errMsg: undefined })
+        ).
+            catch(
+                error => setNewState({ customers: undefined, errMsg: error.message })
+            )
     };
 
     /**
@@ -33,36 +33,37 @@ export default function GetAllCustomers() {
      * to break this cycle, empty array is passed, now useeffect will be executed only when component is mounted
      *  and not when it is updated
      */
-    useEffect(fetchAllCustomers,[]);
+    useEffect(fetchAllCustomers, []);
 
-    console.log("inside getall customers",currentState.customers);
+    console.log("inside getall customers", currentState.customers);
 
     return (
         <div>
 
-             <h1>Get All custoemrs</h1>
+            <h1>Get All customers</h1>
 
-            <ul>
+            <div className={commonStyle.content}>
+                <ul >
 
-                {currentState.customers ? (
+                    {currentState.customers ? (
 
-                   <DisplayCustomerList customers={currentState.customers} />
+                        <DisplayCustomerList customers={currentState.customers} />
 
-                ) : ''}
-
-
-
-            </ul>
+                    ) : ''}
 
 
+
+                </ul>
+
+            </div>
             { currentState.errMsg ? (
 
                 <div className={commonStyle.error}>
-               Error in request processing
-               <br/>
-               {currentState.errMsg}
+                    Error in request processing
+                    <br />
+                    {currentState.errMsg}
                 </div>
-            ): '' }
+            ) : ''}
 
 
         </div>

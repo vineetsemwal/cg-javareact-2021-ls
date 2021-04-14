@@ -55,7 +55,7 @@ export default function AddCustomer() {
         <div>
             <h1>Add Customer </h1>
 
-            <form onSubmit={submitHandler}>
+            <form onSubmit={submitHandler} className={commonStyle.content}>
 
                 <div className="form-group">
                     <label>Enter name</label>
