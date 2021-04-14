@@ -57,26 +57,26 @@ export default function AddCustomer() {
 
             <form onSubmit={submitHandler}>
 
-                <div>
+                <div className="form-group">
                     <label>Enter name</label>
-                    <input name="name" type="text" ref={nameRef}  onChange={()=>setFieldState(nameRef)} />
+                    <input name="name" type="text" ref={nameRef}  onChange={()=>setFieldState(nameRef)} className="form-control" />
 
                 </div>
 
 
-                <div>
+                <div className="form-group">
                     <label>Enter age</label>
-                    <input name="age" type="number" ref={ageRef} onChange={()=>setFieldState(ageRef)} />
+                    <input name="age" type="number" ref={ageRef} onChange={()=>setFieldState(ageRef)} className="form-control" />
 
                 </div>
 
-                <div>
+                <div className="form-group">
                     <label>Enter address</label>
-                    <input name="address" type="text" ref={addressRef}  onChange={()=>setFieldState(addressRef)} />
+                    <input name="address" type="text" ref={addressRef}  onChange={()=>setFieldState(addressRef)} className="form-control" />
 
                 </div>
 
-                <button>Add Customer </button>
+                <button class="btn btn-primary">Add Customer </button>
 
             </form>
 

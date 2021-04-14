@@ -48,14 +48,14 @@ export default function GetCustomerDetailsOnRequest() {
             <h1> Get customer details on request</h1>
             <form onSubmit={submitHandler}>
 
-                <div>
+                <div className="form-group">
                     <label>Enter id</label>
 
-                    <input name="id" type="number" ref={idRef} onChange={setFieldState} />
+                    <input name="id" type="number" ref={idRef} onChange={setFieldState} className="form-control" />
 
                 </div>
 
-                <button>Get Customer</button>
+                <button className="btn btn-primary">Get Customer</button>
 
             </form>
 

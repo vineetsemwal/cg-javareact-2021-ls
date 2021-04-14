@@ -7,32 +7,61 @@ export default function Navbar() {
         <div>
 
 
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+                <Link to="/" className="navbar-brand" >
+                    Stateful functional demo
+                </Link>
 
-            <Link to="/addcustomer" >
-                <span>Add Customer</span>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
 
-            </Link>
-            <br />
-            <Link to="/all" >
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul className="navbar-nav mr-auto">
+                        <li className="nav-item active">
+                            <Link to="/" className="nav-link" >
+                                <span>Home </span>
+                                <span className="sr-only">(current)</span>
 
-                <span>Get all customers</span>
-            </Link>
-            <br />
-            <Link to="/customerdetailsonrequest" >
+                            </Link>
 
-                <span>Get customer details on request</span>
-            </Link>
-            <br />
 
-            <Link to="/customerdetails/1" >
-                <span>Get customer with id 1 </span>
-            </Link>
+                        </li>
 
-            <br />
+                        <li className="nav-item">
 
-            <Link to="/customerdetails/2" >
-                <span>Get customer with id 2 </span>
-            </Link>
+                            <Link to="/addcustomer" className="nav-link" >
+                                <span>Add Customer</span>
+
+                            </Link>
+                        </li>
+
+
+
+
+                        <li className="nav-item">
+
+                            <Link to="/all" className="nav-link" >
+                                <span>Get All customers</span>
+                            </Link>
+                        </li>
+
+                        <li className="nav-item">
+
+                            <Link to="/customerdetailsonrequest" className="nav-link" >
+                                <span>Get customer details</span>
+                            </Link>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </nav>
+
+
+
+
+
 
         </div>
 

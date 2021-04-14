@@ -20,16 +20,26 @@ function App() {
   return (
     <div>
       <Router>
-        <Navbar/>
+        <Navbar />
+        <div className="container" style={{ marginTop: '50px' }}>
 
-        <Switch>
-          <Route exact path="/" component={Home} />
-         <Route exact path="/all" component={GetAllCustomers} />
-         <Route exact path="/addcustomer" component={AddCustomer} />
-         <Route  exact path="/customerdetails/:id" component={GetCustomerDetails} />
-         <Route  exact path="/customerdetailsonrequest" component={GetCustomerDetailsOnRequest} />
-      
-      </Switch>
+          <div className="row">
+
+            <div className="col-md-9">
+
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/all" component={GetAllCustomers} />
+                <Route exact path="/addcustomer" component={AddCustomer} />
+                <Route exact path="/customerdetails/:id" component={GetCustomerDetails} />
+                <Route exact path="/customerdetailsonrequest" component={GetCustomerDetailsOnRequest} />
+
+              </Switch>
+
+            </div>
+          </div>
+        </div>
+
       </Router>
     </div>
   );
