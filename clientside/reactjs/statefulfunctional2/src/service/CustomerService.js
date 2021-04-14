@@ -16,5 +16,11 @@ function addCustomer(data) {
     return promise;
 }
 
+function fetchAll(){
+    const url = baseUrl + "/customers";
+    const promise = axios.get(url);
+    return promise;
+}
 
-export { fetchCustomer, addCustomer };
+
+export { fetchCustomer, addCustomer, fetchAll };
