@@ -1,9 +1,9 @@
-import React, { useState , useEffect} from 'react'
+import React, { useState } from 'react'
 import DisplayCustomerDetails from './DisplayCustomerDetails';
 import commonStyle from './commonStyle.module.css';
 import {fetchCustomer}  from '../service/CustomerService';
 
-export default function GetCustomerDetails(props) {
+export default function GetCustomerDetailsOnRequest() {
     /*
     let mockCustomer={
         id:10,
@@ -12,18 +12,18 @@ export default function GetCustomerDetails(props) {
         address: 'chennai'
       };
       */
+
     const idRef = React.createRef();
 
-
-    const intitalState = { customer:undefined, errMsg: undefined };
+    const intitalState = { id: undefined, customer:undefined, errMsg: undefined };
 
     const [currentState, setNewState] = useState(intitalState);
 
-    
 
-    const fetchCustomerOnRender=()=>{
-        const id=props.match.params.id;// fetching id from parameter     
-        const promise=  fetchCustomer(id);
+    const submitHandler = (event) => {
+        event.preventDefault();
+        console.log("current state", currentState);
+        const promise= fetchCustomer(currentState.id);
         const successFun=(response)=>{
         const newState={...currentState, customer:response.data};
             setNewState(newState);
@@ -37,9 +37,6 @@ export default function GetCustomerDetails(props) {
 
     }
 
-     useEffect(fetchCustomerOnRender);
-
-
     const setFieldState = () => {
         const idValue = idRef.current.value;
         const newState = { ...currentState, id: idValue, customer: undefined, errMsg:undefined };
@@ -48,8 +45,19 @@ export default function GetCustomerDetails(props) {
 
     return (
         <div>
-            <h1> Get customer details</h1>
-           
+            <h1> Get customer details on request</h1>
+            <form onSubmit={submitHandler}>
+
+                <div>
+                    <label>Enter id</label>
+
+                    <input name="id" type="number" ref={idRef} onChange={setFieldState} />
+
+                </div>
+
+                <button>Get Customer</button>
+
+            </form>
 
 
             {currentState.customer ? (

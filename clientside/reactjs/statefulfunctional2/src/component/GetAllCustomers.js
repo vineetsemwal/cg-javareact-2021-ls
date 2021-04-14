@@ -15,7 +15,7 @@ export default function GetAllCustomers() {
 */
     const [currentState, setNewState] = useState({ customers: undefined, errMsg: undefined});
 
-    const fetchAllEmployees = () => {
+    const fetchAllCustomers = () => {
         console.log("inside use state function")
         const promise = fetchAll();
         promise.then(
@@ -33,7 +33,7 @@ export default function GetAllCustomers() {
      * to break this cycle, empty array is passed, now useeffect will be executed only when component is mounted
      *  and not when it is updated
      */
-    useEffect(fetchAllEmployees,[]);
+    useEffect(fetchAllCustomers,[]);
 
     console.log("inside getall customers",currentState.customers);
 
