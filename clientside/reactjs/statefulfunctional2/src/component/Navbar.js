@@ -18,6 +18,11 @@ export default function Navbar() {
                 <span>Get all customers</span>
             </Link>
             <br />
+            <Link to="/customerdetailsonrequest" >
+
+                <span>Get customer details on request</span>
+            </Link>
+            <br />
 
             <Link to="/customerdetails/1" >
                 <span>Get customer with id 1 </span>
