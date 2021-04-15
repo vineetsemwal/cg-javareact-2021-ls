@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
+import { fetchAll } from "../service/CustomerService";
 import DisplayCustomerDetails from "./DisplayCustomerDetails";
 import commonStyle from './commonStyle.module.css';
 import DisplayCustomerList from "./DisplayCustomerList";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchAllCustomers } from "../redux/fetchallcustomers/fetchAllCustomersAction";
+import { fetchAllCustomers } from "../redux/fetchallcustomers/fetchAllCustomersActions";
 
 export default function GetAllCustomers() {
 
@@ -15,22 +16,20 @@ export default function GetAllCustomers() {
     
     */
 
-    const currentState = useSelector(state => {
-        let result = {
-            customers: state.fetchAllCustomers.customers,
-            error: state.fetchAllCustomers.error,
-            progress: state.fetchAllCustomers.progress
-        };
-        return result;
-    })
+    const currentState =useSelector(state=>{
+         return {
+           customers: state.fetchAllCustomers.customers,
+           error:state.fetchAllCustomers.error,
 
-    const dispatch = useDispatch();
+         };
+     }) 
+     
+     const dispatch=useDispatch();
+
     const fetchAll = () => {
         console.log("inside use state function")
-        dispatch(fetchAllCustomers);
+        dispatch(fetchAllCustomers());
     };
-
-
 
     /**
      * use effect gets execute when component is mounted and also when component is updated
@@ -62,7 +61,7 @@ export default function GetAllCustomers() {
                 </ul>
 
             </div>
-            { currentState.error? (
+            { currentState.error ? (
 
                 <div className={commonStyle.error}>
                     Error in request processing

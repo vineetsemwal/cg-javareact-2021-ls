@@ -13,30 +13,25 @@ export default function GetCustomerDetails(props) {
         address: 'chennai'
       };
       */
-    const idRef = React.createRef();
-
-
-   const currentState= useSelector(state=>{
-        return (
-          {
-            customer:state.fetchCustomerById.customer ,
-            error: state.fetchCustomerById.error
-          }
-        );
-    })
-
-   const dispatch=useDispatch();
-
-    
+   
+    const currentState = useSelector( state=>{
+          return ({
+            customer: state.fetchCustomerById.customer,
+            error:state.fetchCustomerById.error
+          });
+      })
+   
+      const dispatch=useDispatch();
+  
 
     const fetchCustomerOnRender=()=>{
         const id=props.match.params.id;// fetching id from parameter     
-        console.log("id="+id);
-//       dispatch(fetchCustomerById(id));
-        fetchCustomerById(id);
+         dispatch(fetchCustomerById(id));
+
     }
 
      useEffect(fetchCustomerOnRender,[]);
+
 
 
     return (

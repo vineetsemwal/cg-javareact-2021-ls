@@ -16,7 +16,7 @@ export default function DecrementCount() {
 
     const clickHandler = (event)=>{
         event.preventDefault();
-        dispatch(decrement);
+        dispatch(decrement());
     }
 
 

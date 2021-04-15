@@ -15,7 +15,7 @@ export default function IncrementCount() {
 
     const clickHandler = (event) => {
         event.preventDefault();
-        dispatch(increment);  
+        dispatch(increment());  
     }
 
 

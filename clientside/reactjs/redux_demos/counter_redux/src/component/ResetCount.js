@@ -17,7 +17,7 @@ export default function ResetCount(){
     const clickHandler=(event)=>{
         event.preventDefault();
         console.log("inside click handler, action dispatched");
-        dispatch(reset);
+        dispatch(reset());
     }
  
  
