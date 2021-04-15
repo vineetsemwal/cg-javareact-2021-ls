@@ -1,7 +1,8 @@
 import React, { useState , useEffect} from 'react'
 import DisplayCustomerDetails from './DisplayCustomerDetails';
 import commonStyle from './commonStyle.module.css';
-import {fetchCustomer}  from '../service/CustomerService';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchCustomerById } from '../redux/fetchcustomerbyid/fetchCustomerByIdActions';
 
 export default function GetCustomerDetails(props) {
     /*
@@ -15,36 +16,28 @@ export default function GetCustomerDetails(props) {
     const idRef = React.createRef();
 
 
-    const intitalState = { customer:undefined, errMsg: undefined };
+   const currentState= useSelector(state=>{
+        return (
+          {
+            customer:state.fetchCustomerById.customer ,
+            error: state.fetchCustomerById.error
+          }
+        );
+    })
 
-    const [currentState, setNewState] = useState(intitalState);
+   const dispatch=useDispatch();
 
     
 
     const fetchCustomerOnRender=()=>{
         const id=props.match.params.id;// fetching id from parameter     
-        const promise=  fetchCustomer(id);
-        const successFun=(response)=>{
-        const newState={...currentState, customer:response.data};
-            setNewState(newState);
-        };
-         const errFun=(error)=>{
-           const newState={...currentState, errMsg:error.message};
-            setNewState(newState);
-         };
-
-         promise.then(successFun).catch(errFun);
-
+        console.log("id="+id);
+//       dispatch(fetchCustomerById(id));
+        fetchCustomerById(id);
     }
 
-     useEffect(fetchCustomerOnRender);
+     useEffect(fetchCustomerOnRender,[]);
 
-
-    const setFieldState = () => {
-        const idValue = idRef.current.value;
-        const newState = { ...currentState, id: idValue, customer: undefined, errMsg:undefined };
-        setNewState(newState);
-    }
 
     return (
         <div>
@@ -60,12 +53,12 @@ export default function GetCustomerDetails(props) {
 
 
             {
-                currentState.errMsg ? (
+                currentState.error ? (
 
                     <div className={commonStyle.error}>
                         Request processing unsuccessful
                         <br />
-                        {currentState.errMsg}
+                        {currentState.error}
 
                     </div>
                 ) : ''

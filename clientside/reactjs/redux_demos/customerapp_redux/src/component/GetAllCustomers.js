@@ -17,9 +17,9 @@ export default function GetAllCustomers() {
 
     const currentState = useSelector(state => {
         let result = {
-            customers: state.customers,
-            error: state.error,
-            progress: state.progress
+            customers: state.fetchAllCustomers.customers,
+            error: state.fetchAllCustomers.error,
+            progress: state.fetchAllCustomers.progress
         };
         return result;
     })
