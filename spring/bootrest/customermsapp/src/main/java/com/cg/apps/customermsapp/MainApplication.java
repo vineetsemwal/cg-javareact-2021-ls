@@ -12,12 +12,12 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
 @SpringBootApplication
-public class SchoolApplication {
+public class MainApplication {
 
-    private static final Logger Log=LoggerFactory.getLogger(SchoolApplication.class);
+    private static final Logger Log=LoggerFactory.getLogger(MainApplication.class);
 
     public static void main(String[] args){
-       ConfigurableApplicationContext context= SpringApplication.run(SchoolApplication.class, args);
+       ConfigurableApplicationContext context= SpringApplication.run(MainApplication.class, args);
        CustomerUI schoolUI=context.getBean(CustomerUI.class);
        schoolUI.start();
        Log.debug("****i am logged using debug level");

@@ -1,16 +1,17 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
+import addCustomerReducer from "./addcustomer/addCustomerReducer";
 import fetchAllCustomersReducer from "./fetchallcustomers/fetchAllCustomersReducer";
 import fetchCustomerByIdReducer from "./fetchcustomerbyid/fetchCustomerByIdReducer";
 
-const store=createStore(
-    combineReducers(
-        {
-   fetchAllCustomers: fetchAllCustomersReducer,
-   fetchCustomerById:fetchCustomerByIdReducer
-        }),
-    composeWithDevTools(applyMiddleware(thunk))
+const store = createStore(
+  combineReducers({
+    fetchAllCustomers: fetchAllCustomersReducer,
+    fetchCustomerById: fetchCustomerByIdReducer,
+    addCustomer: addCustomerReducer,
+  }),
+  composeWithDevTools(applyMiddleware(thunk))
 );
 
 export default store;

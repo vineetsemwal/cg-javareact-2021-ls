@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import DisplayCustomerDetails from "./DisplayCustomerDetails";
 import commonStyle from "./commonStyle.module.css";
-import { addCustomer } from "../service/CustomerService";
 import validationMessage from '../validationMessage';
+import { useDispatch, useSelector } from "react-redux";
+import { addCustomerAction } from "../redux/addcustomer/addCustomerActions";
 
 export default function AddCustomer() {
   /*
@@ -20,11 +21,20 @@ export default function AddCustomer() {
     name: undefined,
     age: undefined,
     address: undefined,
-    customer: undefined,
-    errMsg: undefined,
     validations: { age: undefined, name: undefined },
   };
   const [currentState, setNewState] = useState(initialState);
+
+  const response= useSelector(state=>{
+      return (
+            {
+             customer :state.addCustomer.customer,
+             error:state.addCustomer.error  
+            }
+      );
+  });
+
+  const dispatch=useDispatch();
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -33,14 +43,9 @@ export default function AddCustomer() {
     }
 
     let data = { ...currentState };
-    const promise = addCustomer(data);
-    promise
-      .then((response) =>
-        setNewState({ ...currentState, customer: response.data })
-      )
-      .catch((error) =>
-        setNewState({ ...currentState, errMsg: error.message })
-      );
+    dispatch(addCustomerAction(data));// dispatching action fucntion
+
+    
   };
 
   const setFieldState = (ref) => {
@@ -155,20 +160,20 @@ export default function AddCustomer() {
         <button className="btn btn-primary">Add Customer </button>
       </form>
 
-      {currentState.customer ? (
+      {response.customer ? (
         <div>
           <h3>Customer Added</h3>
-          <DisplayCustomerDetails customer={currentState.customer} />
+          <DisplayCustomerDetails customer={response.customer} />
         </div>
       ) : (
         ""
       )}
 
-      {currentState.errMsg ? (
+      {response.error ? (
         <div className={commonStyle.error}>
           Request proccessing was not successful
           <br />
-          {currentState.errMsg}
+          {response.error}
         </div>
       ) : (
         ""
