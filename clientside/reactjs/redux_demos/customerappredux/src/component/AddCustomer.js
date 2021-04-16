@@ -43,7 +43,7 @@ export default function AddCustomer() {
     }
 
     let data = { ...currentState };
-    dispatch(addCustomerAction(data));// dispatching action fucntion
+    dispatch(addCustomerAction(data));// dispatching action function to initial action for adding customer
 
     
   };

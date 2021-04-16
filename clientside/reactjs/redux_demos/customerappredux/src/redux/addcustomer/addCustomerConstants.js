@@ -1,9 +1,9 @@
 
 const addCustomerConstants={
   
-    success: "success",
+    success: "add_customer_success",
 
-    fail:"fail"
+    fail:"add_customer_fail"
 
 };
 

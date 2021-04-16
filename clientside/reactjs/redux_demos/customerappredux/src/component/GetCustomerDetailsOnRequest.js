@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import DisplayCustomerDetails from './DisplayCustomerDetails';
 import commonStyle from './commonStyle.module.css';
 import { fetchCustomer } from '../service/CustomerService';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCustomerOnRequest } from '../redux/getCustomerOnRequest/getCustomerOnRequestAction';
 
 export default function GetCustomerDetailsOnRequest() {
     /*
@@ -15,25 +17,26 @@ export default function GetCustomerDetailsOnRequest() {
 
     const idRef = React.createRef();
 
-    const intitalState = { id: undefined, customer: undefined, errMsg: undefined };
+    const intitalState = { id: undefined };
 
     const [currentState, setNewState] = useState(intitalState);
+
+    const response=useSelector(state=>{
+        return ({
+          customer:state.getCustomerOnRequest.customer,
+          error: state.getCustomerOnRequest.error
+        });
+    })
+
+    const dispatch=useDispatch();
+
 
 
     const submitHandler = (event) => {
         event.preventDefault();
         console.log("current state", currentState);
-        const promise = fetchCustomer(currentState.id);
-        const successFun = (response) => {
-            const newState = { ...currentState, customer: response.data };
-            setNewState(newState);
-        };
-        const errFun = (error) => {
-            const newState = { ...currentState, errMsg: error.message };
-            setNewState(newState);
-        };
-
-        promise.then(successFun).catch(errFun);
+         const id=idRef.current.value;
+         dispatch(getCustomerOnRequest(id));
 
     }
 
@@ -61,20 +64,20 @@ export default function GetCustomerDetailsOnRequest() {
 
                 </form>
 
-                {currentState.customer ? (
+                {response.customer ? (
                     <div>
-                        <DisplayCustomerDetails customer={currentState.customer} />
+                        <DisplayCustomerDetails customer={response.customer} />
                     </div>
                 ) : ''}
 
 
                 {
-                    currentState.errMsg ? (
+                    response.error ? (
 
                         <div className={commonStyle.error}>
                             Request processing unsuccessful
                             <br />
-                            {currentState.errMsg}
+                            {response.error}
 
                         </div>
                     ) : ''
