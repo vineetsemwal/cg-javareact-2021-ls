@@ -4,7 +4,12 @@ import commonStyle from './commonStyle.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCustomerById } from '../redux/fetchcustomerbyid/fetchCustomerByIdActions';
 
-export default function GetCustomerDetails(props) {
+/**
+ * 
+ *  Displays details of customer whose id is in prop
+ * 
+ */
+export default function GetCustomerDetailsById({id}) {
     /*
     let mockCustomer={
         id:10,
@@ -25,7 +30,7 @@ export default function GetCustomerDetails(props) {
   
 
     const fetchCustomerOnRender=()=>{
-        const id=props.match.params.id;// fetching id from parameter     
+       // const id=props.match.params.id;// fetching id from parameter     
          dispatch(fetchCustomerById(id));
 
     }
